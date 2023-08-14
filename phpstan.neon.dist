@@ -8,4 +8,5 @@ parameters:
     checkGenericClassInNonGenericObjectType: false
     paths:
         - web/modules/custom
+        - web/profiles/custom
         - web/themes/custom

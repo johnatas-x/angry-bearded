@@ -12,7 +12,7 @@ grumphp:
   process_timeout: 60
   ascii:
     failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
-    succeeded: vendor/johnatas-x/angry-bearded/resources/happy.txt
+    succeeded: vendor/johnatas-x/angry-bearded/resources/drupal.txt
   git_hook_variables:
     VAGRANT_HOST_DIR: .
     VAGRANT_PROJECT_DIR: /var/www

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="wholetthelogsout">
-    <description>PHP CodeSniffer configuration for wholetthelogsout development.</description>
+    <description>PHP CodeSniffer configuration for Drupal development.</description>
 
     <!-- Files -->
     <file>web/modules/custom</file>
@@ -95,7 +95,7 @@
 
     <!-- PHPCompatibility. -->
     <rule ref="PHPCompatibility"/>
-    <config name="testVersion" value="8.1"/>
+    <config name="testVersion" value="8.2"/>
     <rule ref="PHPCompatibility.Keywords.ForbiddenNamesAsDeclared.resourceFound">
         <!-- Ignore these plugins since the core's rest module does not either. -->
         <exclude-pattern>*/Plugin/rest/resource/*</exclude-pattern>

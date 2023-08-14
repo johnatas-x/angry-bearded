@@ -61,7 +61,9 @@ No additional steps required, but if git hooks aren't fired, run `php ./vendor/b
 
 ## Customising
 
-Almost all customising begins with first copying the `grumphp.yml.dist` file to your project. Make sure you have the file.
+* Almost all customising begins with first copying the `grumphp.yml.dist` file to your project. Make sure you have the file.
+* :warning: If some phpstan exceptions do not apply to your project, comment out the lines otherwise an error will be raised.
+* By default, Drupal logo is used on success output, you can use GrumPHP's logo modifying `ascii` in `grumphp.yml`
 
 ### Adding tasks
 
