@@ -1,0 +1,11 @@
+includes:
+  - phpstan-drupal.neon
+
+parameters:
+    level: max
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    paths:
+        - web/modules/custom
+        - web/themes/custom

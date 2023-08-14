@@ -1,0 +1,180 @@
+parameters:
+  git_dir: .
+  bin_dir: vendor/bin
+grumphp:
+  extensions:
+    - GrumphpDrupalCheck\ExtensionLoader
+  ignore_unstaged_changes: true
+  stop_on_failure: false
+  hide_circumvention_tip: false
+  parallel:
+    enabled: false
+  process_timeout: 60
+  ascii:
+    failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
+    succeeded: vendor/johnatas-x/angry-bearded/resources/happy.txt
+  git_hook_variables:
+    VAGRANT_HOST_DIR: .
+    VAGRANT_PROJECT_DIR: /var/www
+    EXEC_GRUMPHP_COMMAND: fin exec
+    ENV: {}
+  tasks:
+    composer:
+      file: ./composer.json
+      no_check_all: false
+      no_check_lock: false
+      no_check_publish: false
+      no_local_repository: false
+      with_dependencies: false
+      strict: false
+    composer_normalize:
+      indent_size: ~
+      indent_style: ~
+      no_check_lock: false
+      no_update_lock: true
+      verbose: false
+    drupal_check:
+      drupal_root: ~
+      memory_limit: ~
+      deprecations: true
+      analysis: false
+      php8: true
+      exclude_dir: [ ]
+    jsonlint:
+      ignore_patterns: [
+        'qodana.sarif.json'
+      ]
+      detect_key_conflicts: false
+    phpcpd:
+      directory: [
+        'web/modules/custom',
+        'web/profiles/custom',
+        'web/themes/custom'
+      ]
+      exclude: [ ]
+      fuzzy: false
+      min_lines: 5
+      min_tokens: 70
+      triggered_by: [ 'php' ]
+    phpcs:
+      standard:
+        - phpcs.xml
+        - vendor/drupal/coder/coder_sniffer/Drupal
+        - vendor/drupal/coder/coder_sniffer/DrupalPractice
+      severity: ~
+      error_severity: ~
+      warning_severity: ~
+      tab_width: ~
+      report: full,summary
+      report_width: ~
+      whitelist_patterns:
+        - web/modules/custom
+        - web/profiles/custom
+        - web/themes/custom
+      encoding: ~
+      ignore_patterns: [ ]
+      sniffs: [ ]
+      triggered_by:
+        - inc
+        - info
+        - install
+        - module
+        - php
+        - profile
+        - test
+        - theme
+        - yml
+      exclude: [ ]
+      show_sniffs_error_path: true
+    phplint:
+      exclude: [ ]
+      jobs: ~
+      short_open_tag: false
+      ignore_patterns:
+        - "#vendor/(.*)#"
+      triggered_by: [ 'php', 'phtml', 'php3', 'php4', 'php5' ]
+    phpmd:
+      whitelist_patterns:
+        - /^web\/modules\/custom\/(.*)/
+        - /^web\/profiles\/custom\/(.*)/
+        - /^web\/themes\/custom\/(.*)/
+      exclude: [ ]
+      report_format: text
+      ruleset: ['phpmd.xml']
+      triggered_by:
+        - install
+        - module
+        - php
+        - profile
+        - theme
+    phpmnd:
+      directory: web
+      whitelist_patterns: [ ]
+      exclude:
+        - core
+        - modules/contrib
+        - profiles/contrib
+        - themes/contrib
+      exclude_name: [ ]
+      exclude_path: [ ]
+      extensions: [ ]
+      hint: false
+      ignore_funcs: [ ]
+      ignore_numbers: [ ]
+      ignore_strings: [ ]
+      strings: false
+      triggered_by:
+        - inc
+        - info
+        - install
+        - module
+        - php
+        - profile
+        - test
+        - theme
+    phpstan:
+      autoload_file: ~
+      configuration: ~
+      level: null
+      force_patterns: [ ]
+      ignore_patterns: [ ]
+      triggered_by:
+        - install
+        - module
+        - php
+        - profile
+        - theme
+      memory_limit: "-1"
+      use_grumphp_paths: false
+    shell:
+      scripts:
+        - # Add here your scripts and your commands.
+    twigcs:
+      path: 'web'
+      severity: 'warning'
+      display: 'all'
+      ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'
+      triggered_by: [ 'twig' ]
+      exclude:
+        - core
+        - modules/contrib
+        - profiles/contrib
+        - themes/contrib
+    xmllint:
+      ignore_patterns: [ ]
+      load_from_net: false
+      x_include: false
+      dtd_validation: false
+      scheme_validation: false
+      triggered_by: [ 'xml' ]
+    yamllint:
+      whitelist_patterns:
+        - /^config\/(.*)/
+        - /^web\/modules\/custom\/(.*)/
+        - /^web\/profiles\/custom\/(.*)/
+        - /^web\/themes\/custom\/(.*)/
+      ignore_patterns: [ ]
+      object_support: false
+      exception_on_invalid_type: false
+      parse_constant: false
+      parse_custom_tags: false
