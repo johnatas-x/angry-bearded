@@ -1,3 +1,5 @@
+<img src="resources/angry-bearded-bird.png" align="left" width="115"/>
+
 # Angry bearded
 
 This tool is a pre-configured [GrumPHP](https://github.com/phpro/grumphp) for Drupal 9 and Drupal 10 projects.
