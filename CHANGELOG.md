@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.0 / 2023-08-19
+* Use `develop` branch for `PHPCompatibility` instead of last (obsolete) release.
+
 ## 1.0.2 / 2023-08-19
 * Update phpstan triggered extensions (based on phpstan-drupal)
 
