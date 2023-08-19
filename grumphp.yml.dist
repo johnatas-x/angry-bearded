@@ -37,7 +37,8 @@ grumphp:
       drupal_root: ~
       memory_limit: ~
       deprecations: true
-      analysis: false
+      analysis: true
+      style: true
       php8: true
       exclude_dir: [ ]
     jsonlint:
