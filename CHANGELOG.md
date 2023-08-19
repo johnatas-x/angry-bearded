@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.1 / 2023-08-19
+* Fix deleted rule in phpcs configuration.
+
 ## 1.1.0 / 2023-08-19
 * Use `develop` branch for `PHPCompatibility` instead of last (obsolete) release.
 
