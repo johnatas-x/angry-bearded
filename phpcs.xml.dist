@@ -38,6 +38,7 @@
 
     <!-- Slevomat coding standards adapted to Drupal. -->
     <rule ref="SlevomatCodingStandard">
+        <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
         <exclude name="SlevomatCodingStandard.Classes.ParentCallSpacing.IncorrectLinesCountBeforeControlStructure" />
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal.ClassNeitherAbstractNorFinal" />
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
@@ -61,6 +62,7 @@
         <exclude name="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator.DisallowedNumericLiteralSeparator"/>
         <exclude name="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators.DisallowedPostIncrementOperator" />
         <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference" />
+        <exclude name="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax.DisallowedArrayTypeHintSyntax" />
         <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint" />
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.UselessAnnotation" />

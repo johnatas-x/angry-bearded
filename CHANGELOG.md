@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.3 / 2023-08-26
+* Improve & fix rules
+
 ## 1.1.2 / 2023-08-23
 * Update SlevomatCodingStandard rules
 

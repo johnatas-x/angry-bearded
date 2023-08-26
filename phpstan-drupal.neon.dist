@@ -6,7 +6,7 @@ parameters:
       -
         message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
         path: *.module
-      # new static() is a best practice in Drupal, so we cannot fix that.
+      # new static() is a best practice in Drupal (especially for ContainerInjectionInterface::create methods in a non-final class), so we cannot fix that.
       - "#^Unsafe usage of new static#"
 
       # Ignore common errors for now.

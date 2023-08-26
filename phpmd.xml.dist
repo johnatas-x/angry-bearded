@@ -47,6 +47,7 @@
                     \DateTime,
                     \DateTimeZone,
                     \Drupal\Component\Plugin\Factory\DefaultFactory,
+                    \Drupal\Component\Serialization\Json,
                     \Drupal\Component\Utility\Crypt,
                     \Drupal\Component\Utility\Html,
                     \Drupal\Component\Utility\NestedArray,
@@ -67,19 +68,23 @@
         </properties>
     </rule>
 
-    <rule ref="rulesets/codesize.xml" />
     <rule ref="rulesets/controversial.xml">
         <exclude name="CamelCaseParameterName"/>
         <exclude name="CamelCaseVariableName"/>
     </rule>
+
     <rule ref="rulesets/design.xml" />
-    <rule ref="rulesets/naming.xml" />
+
+    <rule ref="rulesets/naming.xml">
+        <exclude name="ShortVariable"/>
+    </rule>
     <rule ref="rulesets/naming.xml/ShortVariable">
         <properties>
             <property name="minimum" value="3"/>
             <property name="exceptions" value="id"/>
         </properties>
     </rule>
+
     <rule ref="rulesets/unusedcode.xml" />
 
 </ruleset>
