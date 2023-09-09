@@ -5,6 +5,7 @@ grumphp:
   extensions:
     - GrumphpDrupalCheck\ExtensionLoader
     - GrumphpPhpa\ExtensionLoader
+    - GrumphpPhpdd\ExtensionLoader
   ignore_unstaged_changes: true
   stop_on_failure: false
   hide_circumvention_tip: false
@@ -97,6 +98,23 @@ grumphp:
         - yml
       exclude: [ ]
       show_sniffs_error_path: true
+    phpdd:
+      files:
+        - web/modules/custom
+        - web/profiles/custom
+        - web/themes/custom
+      target: '8.1'
+      after: ~
+      exclude: []
+      max_size: ~
+      file_extensions:
+        - inc
+        - install
+        - module
+        - php
+        - profile
+        - theme
+      skip_checks: []
     phplint:
       exclude: [ ]
       jobs: ~
