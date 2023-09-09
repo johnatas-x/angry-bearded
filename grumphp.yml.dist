@@ -4,6 +4,7 @@ parameters:
 grumphp:
   extensions:
     - GrumphpDrupalCheck\ExtensionLoader
+    - GrumphpPhpa\ExtensionLoader
   ignore_unstaged_changes: true
   stop_on_failure: false
   hide_circumvention_tip: false
@@ -46,6 +47,15 @@ grumphp:
         'qodana.sarif.json'
       ]
       detect_key_conflicts: false
+    phpa:
+      path: web
+      exclude: [
+        'web/core',
+        'web/modules/contrib',
+        'web/profiles/contrib',
+        'web/sites',
+        'web/themes/contrib'
+      ]
     phpcpd:
       directory: [
         'web/modules/custom',
