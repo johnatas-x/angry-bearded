@@ -40,34 +40,37 @@ grumphp:
       memory_limit: ~
       deprecations: true
       analysis: true
-      style: true
+      style: false
       php8: true
       exclude_dir: [ ]
     jsonlint:
-      ignore_patterns: [
-        'qodana.sarif.json'
-      ]
+      ignore_patterns:
+        - qodana.sarif.json
       detect_key_conflicts: false
     phpa:
       path: web
-      exclude: [
-        'web/core',
-        'web/modules/contrib',
-        'web/profiles/contrib',
-        'web/sites',
-        'web/themes/contrib'
-      ]
+      exclude:
+        - web/core
+        - web/modules/contrib
+        - web/profiles/contrib
+        - web/sites
+        - web/themes/contrib
     phpcpd:
-      directory: [
-        'web/modules/custom',
-        'web/profiles/custom',
-        'web/themes/custom'
-      ]
+      directory:
+        - web/modules/contrib
+        - web/profiles/contrib
+        - web/themes/contrib
       exclude: [ ]
       fuzzy: false
       min_lines: 5
       min_tokens: 70
-      triggered_by: [ 'php' ]
+      triggered_by:
+        - inc
+        - install
+        - module
+        - php
+        - profile
+        - theme
     phpcs:
       standard:
         - phpcs.xml
@@ -121,7 +124,13 @@ grumphp:
       short_open_tag: false
       ignore_patterns:
         - "#vendor/(.*)#"
-      triggered_by: [ 'php', 'phtml', 'php3', 'php4', 'php5' ]
+      triggered_by:
+        - inc
+        - install
+        - module
+        - php
+        - profile
+        - theme
     phpmd:
       whitelist_patterns:
         - /^web\/modules\/custom\/(.*)/
@@ -129,8 +138,10 @@ grumphp:
         - /^web\/themes\/custom\/(.*)/
       exclude: [ ]
       report_format: text
-      ruleset: ['phpmd.xml']
+      ruleset:
+        - phpmd.xml
       triggered_by:
+        - inc
         - install
         - module
         - php
@@ -143,6 +154,7 @@ grumphp:
         - core
         - modules/contrib
         - profiles/contrib
+        - sites
         - themes/contrib
       exclude_name: [ ]
       exclude_path: [ ]
