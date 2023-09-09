@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="wholetthelogsout">
-    <description>PHP CodeSniffer configuration for Drupal development.</description>
+    <description>PHP CodeSniffer configuration for Drupal 10 development.</description>
 
     <!-- Files -->
     <file>web/modules/custom</file>
@@ -36,7 +36,7 @@
     <rule ref="Squiz.PHP.CommentedOutCode" />
     <rule ref="Squiz.PHP.Eval" />
 
-    <!-- Slevomat coding standards adapted to Drupal. -->
+    <!-- Slevomat coding standards adapted to Drupal 10. -->
     <rule ref="SlevomatCodingStandard">
         <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
         <exclude name="SlevomatCodingStandard.Classes.ParentCallSpacing.IncorrectLinesCountBeforeControlStructure" />

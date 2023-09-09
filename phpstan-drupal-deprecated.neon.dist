@@ -1,0 +1,16 @@
+# This configuration is very soft and reports only Drupal & Symfony deprecated.
+
+parameters:
+  customRulesetUsed: true
+  reportUnmatchedIgnoredErrors: false
+  paths:
+    - web/modules/custom
+    - web/profiles/custom
+    - web/themes/custom
+  ignoreErrors:
+  	- '#\Drupal calls should be avoided in classes, use dependency injection instead#'
+  	- '#Plugin definitions cannot be altered.#'
+  	- '#Missing cache backend declaration for performance.#'
+  	- '#Plugin manager has cache backend specified but does not declare cache tags.#'
+  	- '#cache tag might be unclear and does not contain the cache key in it.#'
+  	- '#^Class .* extends @internal class#'

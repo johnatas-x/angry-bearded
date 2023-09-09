@@ -2,7 +2,7 @@
 
 # Angry bearded
 
-This tool is a pre-configured [GrumPHP](https://github.com/phpro/grumphp) for Drupal 9 and Drupal 10 projects.
+This tool is a pre-configured [GrumPHP](https://github.com/phpro/grumphp) for Drupal 10 projects.
 
 The rules are voluntarily hard, don't hesitate to adapt the .dist files to your needs.
 
