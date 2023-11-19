@@ -1,4 +1,4 @@
-<img src="resources/angry-bearded-bird.png" align="left" width="180"/>
+<img src="resources/angry-bearderd.png" align="left" width="210"/>
 
 # Angry bearded
 
