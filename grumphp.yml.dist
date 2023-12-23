@@ -57,9 +57,9 @@ grumphp:
         - web/themes/contrib
     phpcpd:
       directory:
-        - web/modules/contrib
-        - web/profiles/contrib
-        - web/themes/contrib
+        - web/modules/custom
+        - web/profiles/custom
+        - web/themes/custom
       exclude: [ ]
       fuzzy: false
       min_lines: 5
@@ -106,7 +106,7 @@ grumphp:
         - web/modules/custom
         - web/profiles/custom
         - web/themes/custom
-      target: '8.3'
+      target: '8.1' # Actually not compatible 8.2 and 8.3.
       after: ~
       exclude: []
       max_size: ~

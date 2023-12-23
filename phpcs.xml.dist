@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="wholetthelogsout">
+<ruleset name="angry-bearded">
     <description>PHP CodeSniffer configuration for Drupal 10 development.</description>
 
     <!-- Files -->
@@ -82,7 +82,7 @@
         </properties>
     </rule>
 
-    <!-- Set max function length to 35 lignes (best compromise in my opinion). -->
+    <!-- Set max function length to 35 lines (best compromise in my opinion). -->
     <rule ref="SlevomatCodingStandard.Files.FunctionLength">
         <properties>
             <property name="maxLinesLength" value="35"/>

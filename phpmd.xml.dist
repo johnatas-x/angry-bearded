@@ -13,12 +13,10 @@
     <exclude-pattern>*/tests/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
 
-    <rule ref="rulesets/codesize.xml/CyclomaticComplexity" />
-    <rule ref="rulesets/codesize.xml/NPathComplexity" />
-    <rule ref="rulesets/codesize.xml/ExcessiveMethodLength" />
-    <rule ref="rulesets/codesize.xml/ExcessiveParameterList" />
-    <rule ref="rulesets/codesize.xml/ExcessivePublicCount" />
-    <rule ref="rulesets/codesize.xml/TooManyFields" />
+    <rule ref="rulesets/codesize.xml">
+        <exclude name="TooManyMethods"/>
+        <exclude name="ExcessiveClassComplexity"/>
+    </rule>
     <rule ref="rulesets/codesize.xml/TooManyMethods">
         <properties>
             <property name="maxmethods" value="50" />
@@ -46,6 +44,7 @@
                     \DateInterval,
                     \DateTime,
                     \DateTimeZone,
+                    \Drupal,
                     \Drupal\Component\Plugin\Factory\DefaultFactory,
                     \Drupal\Component\Serialization\Json,
                     \Drupal\Component\Utility\Crypt,
@@ -62,6 +61,14 @@
                     \Drupal\Core\Render\Markup,
                     \Drupal\Core\Site\Settings,
                     \Drupal\Core\Url,
+                    \Drupal\block\Entity\Block,
+                    \Drupal\comment\Entity\Comment,
+                    \Drupal\config_pages\Entity\ConfigPages,
+                    \Drupal\field\Entity\FieldConfig,
+                    \Drupal\field\Entity\FieldStorageConfig,
+                    \Drupal\file\Entity\File,
+                    \Drupal\media\Entity\Media,
+                    \Drupal\node\Entity\Node,
                     \Drupal\user\Entity\User
                 </value>
             </property>
