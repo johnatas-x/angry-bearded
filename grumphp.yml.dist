@@ -18,7 +18,7 @@ grumphp:
   git_hook_variables:
     VAGRANT_HOST_DIR: .
     VAGRANT_PROJECT_DIR: /var/www
-    EXEC_GRUMPHP_COMMAND: fin exec
+    EXEC_GRUMPHP_COMMAND: exec
     ENV: {}
   tasks:
     composer:
@@ -60,7 +60,10 @@ grumphp:
         - web/modules/custom
         - web/profiles/custom
         - web/themes/custom
-      exclude: [ ]
+      exclude:
+        - "web/modules/custom/*/src/Form"
+        - "web/modules/custom/*/src/Plugin"
+        - "web/modules/custom/*/src/Entity"
       fuzzy: false
       min_lines: 5
       min_tokens: 70

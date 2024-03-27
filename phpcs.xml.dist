@@ -36,6 +36,15 @@
     <rule ref="Squiz.PHP.CommentedOutCode" />
     <rule ref="Squiz.PHP.Eval" />
 
+    <!-- Generic PHP Sniff. -->
+    <rule ref="Squiz.PHP.CommentedOutCode" />
+    <rule ref="Squiz.PHP.Eval" />
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
+        <!-- https://www.drupal.org/project/coder/issues/3355778 -->
+        <!-- https://www.drupal.org/project/drupal/issues/2908266 -->
+        <severity>0</severity>
+    </rule>
+
     <!-- Slevomat coding standards adapted to Drupal 10. -->
     <rule ref="SlevomatCodingStandard">
         <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
@@ -52,6 +61,8 @@
         <exclude name="SlevomatCodingStandard.ControlStructures.RequireYodaComparison.RequiredYodaComparison" />
         <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName.NoMatchBetweenTypeNameAndFileName" />
         <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall.MissingTrailingComma" />
+        <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse.MissingTrailingComma" />
+        <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration.MissingTrailingComma" />
         <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration.MissingTrailingComma" />
         <exclude name="SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter" />
         <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants.NonFullyQualified" />
@@ -101,6 +112,6 @@
 
     <!-- PHPCompatibility. -->
     <rule ref="PHPCompatibility"/>
-    <config name="testVersion" value="8.3"/>
+    <config name="testVersion" value="8.4"/>
 
 </ruleset>
