@@ -1,6 +1,6 @@
-<img src="resources/angry-bearderd.png" align="left" width="210"/>
-
 # Angry bearded
+
+<img src="resources/angry-bearderd.png" align="left" width="128"/>
 
 This tool is a pre-configured [GrumPHP](https://github.com/phpro/grumphp) for Drupal 10 projects.
 
