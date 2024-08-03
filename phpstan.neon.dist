@@ -4,9 +4,11 @@ includes:
 parameters:
     level: max
     inferPrivatePropertyTypeFromConstructor: true
-    checkMissingIterableValueType: false
-    checkGenericClassInNonGenericObjectType: false
     paths:
-        - web/modules/custom
-        - web/profiles/custom
-        - web/themes/custom
+      - web/modules/custom
+      - web/profiles/custom
+      - web/themes/custom
+    ignoreErrors:
+      identifier:
+        - missingType.iterableValue
+        - missingType.generics
