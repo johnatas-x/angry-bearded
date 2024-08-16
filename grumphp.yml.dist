@@ -9,6 +9,9 @@ grumphp:
   ignore_unstaged_changes: true
   stop_on_failure: false
   hide_circumvention_tip: false
+  fixer:
+    enabled: true
+    fix_by_default: false
   parallel:
     enabled: false
   process_timeout: 60
@@ -20,6 +23,11 @@ grumphp:
     VAGRANT_PROJECT_DIR: /var/www
     EXEC_GRUMPHP_COMMAND: exec
     ENV: {}
+  environment:
+    files: [ ]
+    variables: { }
+    paths: [ ]
+  testsuites: []
   tasks:
     composer:
       file: ./composer.json
@@ -29,12 +37,38 @@ grumphp:
       no_local_repository: false
       with_dependencies: false
       strict: false
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     composer_normalize:
       indent_size: ~
       indent_style: ~
       no_check_lock: false
       no_update_lock: true
       verbose: false
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    composer_require_checker:
+      composer_file: 'composer.json'
+      config_file: ~
+      ignore_parse_errors: false
+      triggered_by:
+        - 'composer.json'
+        - 'composer.lock'
+        - '*.php'
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     drupal_check:
       drupal_root: ~
       memory_limit: ~
@@ -43,10 +77,86 @@ grumphp:
       style: false
       php8: true
       exclude_dir: [ ]
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    git_blacklist:
+      keywords:
+        - "die\\("
+        - "var_dump\\("
+        - "exit;"
+      whitelist_patterns:
+        - web/modules/custom
+        - web/profiles/custom
+        - web/themes/custom
+      triggered_by:
+        - inc
+        - install
+        - module
+        - php
+        - profile
+        - theme
+      regexp_type: G
+      match_word: true
+      ignore_patterns: [ ]
+      metadata:
+        blocking: true
+        enabled: false
+        label: null
+        priority: 0
+        task: null
+    git_branch_name:
+      whitelist:
+        - "/JIRA-([0-9]*)/"
+      blacklist:
+        - "develop"
+        - "master"
+      additional_modifiers: ''
+      allow_detached_head: true
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    git_commit_message:
+      allow_empty_message: false
+      enforce_capitalized_subject: true
+      enforce_no_subject_punctuations: false
+      enforce_no_subject_trailing_period: true
+      enforce_single_lined_subject: true
+      type_scope_conventions:
+        types: []
+        scopes: ~
+        subject_pattern: >-
+          ([a-zA-Zа-яА-Я0-9-_ #@'\/\"]+)
+      skip_on_merge_commit: true
+      max_body_width: 72
+      max_subject_width: 60
+      matchers:
+        Must contain JIRA issue number: /JIRA-\d+/
+      case_insensitive: true
+      multiline: true
+      additional_modifiers: ''
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     jsonlint:
       ignore_patterns:
         - qodana.sarif.json
       detect_key_conflicts: false
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpa:
       path: web
       exclude:
@@ -55,6 +165,12 @@ grumphp:
         - web/profiles/contrib
         - web/sites
         - web/themes/contrib
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpcpd:
       directory:
         - web/modules/custom
@@ -74,6 +190,12 @@ grumphp:
         - php
         - profile
         - theme
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpcs:
       standard:
         - phpcs.xml
@@ -104,6 +226,12 @@ grumphp:
         - yml
       exclude: [ ]
       show_sniffs_error_path: true
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpdd:
       files:
         - web/modules/custom
@@ -121,6 +249,12 @@ grumphp:
         - profile
         - theme
       skip_checks: []
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phplint:
       exclude: [ ]
       jobs: ~
@@ -134,6 +268,12 @@ grumphp:
         - php
         - profile
         - theme
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpmd:
       whitelist_patterns:
         - /^web\/modules\/custom\/(.*)/
@@ -150,6 +290,12 @@ grumphp:
         - php
         - profile
         - theme
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpmnd:
       directory: web
       whitelist_patterns: [ ]
@@ -176,6 +322,12 @@ grumphp:
         - profile
         - test
         - theme
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpstan:
       autoload_file: ~
       configuration: ~
@@ -192,9 +344,41 @@ grumphp:
         - theme
       memory_limit: "-1"
       use_grumphp_paths: false
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    phpversion:
+      project: '8.3'
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    securitychecker_composeraudit:
+      format: null
+      locked: true
+      no_dev: true
+      run_always: true
+      working_dir: null
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     shell:
       scripts:
         - # Add here your scripts and your commands.
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     twigcs:
       path: 'web'
       severity: 'warning'
@@ -206,6 +390,29 @@ grumphp:
         - modules/contrib
         - profiles/contrib
         - themes/contrib
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    twigcsfixer:
+      paths:
+        - web/modules/custom
+        - web/profiles/custom
+        - web/themes/custom
+      level: 'warning'
+      config: ~
+      report: 'text'
+      no-cache: false # Add .twig-cs-fixer.cache to your .gitignore.
+      verbose: false
+      triggered_by: [ 'twig' ]
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     xmllint:
       ignore_patterns: [ ]
       load_from_net: false
@@ -213,6 +420,12 @@ grumphp:
       dtd_validation: false
       scheme_validation: false
       triggered_by: [ 'xml' ]
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     yamllint:
       whitelist_patterns:
         - /^config\/(.*)/
@@ -224,3 +437,9 @@ grumphp:
       exception_on_invalid_type: false
       parse_constant: false
       parse_custom_tags: false
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
