@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="angry-bearded">
-    <description>PHP CodeSniffer configuration for Drupal 10 development.</description>
+    <description>PHP CodeSniffer configuration for Drupal 11 development.</description>
 
     <!-- Files -->
     <file>web/modules/custom</file>
