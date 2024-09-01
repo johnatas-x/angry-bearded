@@ -47,6 +47,7 @@
 
     <!-- Slevomat coding standards adapted to Drupal 10. -->
     <rule ref="SlevomatCodingStandard">
+        <exclude name="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys.IncorrectKeyOrder" />
         <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
         <exclude name="SlevomatCodingStandard.Classes.ParentCallSpacing.IncorrectLinesCountBeforeControlStructure" />
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal.ClassNeitherAbstractNorFinal" />
@@ -95,11 +96,6 @@
     </rule>
 
     <!-- Set max function length to 35 lines (best compromise in my opinion). -->
-    <rule ref="SlevomatCodingStandard.Files.FunctionLength">
-        <properties>
-            <property name="maxLinesLength" value="35"/>
-        </properties>
-    </rule>
     <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
         <properties>
             <property name="maxLinesLength" value="35"/>

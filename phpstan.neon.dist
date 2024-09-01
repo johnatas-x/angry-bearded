@@ -8,7 +8,3 @@ parameters:
       - web/modules/custom
       - web/profiles/custom
       - web/themes/custom
-    ignoreErrors:
-      identifier:
-        - missingType.iterableValue
-        - missingType.generics
