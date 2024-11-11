@@ -5,6 +5,7 @@ grumphp:
   extensions:
     - GrumphpDrupalCheck\ExtensionLoader
     - GrumphpPhpa\ExtensionLoader
+    - GrumphpPhpdd\ExtensionLoader
   ignore_unstaged_changes: true
   stop_on_failure: false
   hide_circumvention_tip: false
@@ -24,7 +25,8 @@ grumphp:
     ENV: {}
   environment:
     files: [ ]
-    variables: { }
+    variables:
+      BOX_REQUIREMENT_CHECKER: 0
     paths: [ ]
   testsuites: []
   tasks:
@@ -225,6 +227,30 @@ grumphp:
         - yml
       exclude: [ ]
       show_sniffs_error_path: true
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+      parallel: null
+    phpdd:
+      files:
+        - web/modules/custom
+        - web/profiles/custom
+        - web/themes/custom
+      target: '8.1' # Actually not compatible 8.2 and 8.3.
+      after: ~
+      exclude: []
+      max_size: ~
+      file_extensions:
+        - inc
+        - install
+        - module
+        - php
+        - profile
+        - theme
+      skip_checks: []
       metadata:
         blocking: true
         enabled: true
