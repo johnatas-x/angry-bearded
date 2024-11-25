@@ -389,6 +389,7 @@ grumphp:
       triggered_by: [ 'twig' ]
       exclude:
         - core
+        - libraries
         - modules/contrib
         - profiles/contrib
         - themes/contrib
