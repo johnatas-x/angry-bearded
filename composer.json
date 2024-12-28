@@ -1,7 +1,7 @@
 {
   "name": "johnatas-x/angry-bearded",
   "type": "project",
-  "description": "Code quality checking tools for Drupal 10 projects.",
+  "description": "Code quality checking tools for Drupal 10/11 projects.",
   "homepage": "https://github.com/johnatas-x/angry-bearded",
   "license": "proprietary",
   "authors": [
@@ -13,24 +13,24 @@
   "require": {
     "php": ">=8.3",
     "drupal/coder": "^8.3",
-    "ergebnis/composer-normalize": "^2.44",
-    "friendsoftwig/twigcs": "^6.4",
-    "johnatas-x/grumphp-phpa": "^2.9",
-    "johnatas-x/grumphp-phpdd": "^2.9",
+    "ergebnis/composer-normalize": "^2.45",
+    "friendsoftwig/twigcs": "^6.5",
+    "johnatas-x/grumphp-phpa": "^2.10",
+    "johnatas-x/grumphp-phpdd": "^2.10",
     "johnatas-x/phpcpd": "6.0.4",
     "maglnet/composer-require-checker": "dev-renovate/phpstan-phpstan-2.x",
-    "mglaman/phpstan-drupal": "dev-main",
+    "mglaman/phpstan-drupal": "^2.0",
     "php-parallel-lint/php-parallel-lint": "^1.4",
     "phpcompatibility/php-compatibility": "dev-develop",
     "phpmd/phpmd": "^2.15",
-    "phpro/grumphp": "^2.9",
+    "phpro/grumphp": "^2.10",
     "phpstan/extension-installer": "^1.4",
     "phpstan/phpstan": "^2.0",
     "phpstan/phpstan-deprecation-rules": "^2.0",
     "povils/phpmnd": "^3.5",
     "slevomat/coding-standard": "^8.15",
-    "squizlabs/php_codesniffer": "^3.10",
-    "vincentlanglet/twig-cs-fixer": "^3.3"
+    "squizlabs/php_codesniffer": "^3.11",
+    "vincentlanglet/twig-cs-fixer": "^3.5"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"

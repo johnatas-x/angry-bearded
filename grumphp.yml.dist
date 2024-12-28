@@ -338,7 +338,7 @@ grumphp:
         priority: 0
         task: null
     phpversion:
-      project: '8.3'
+      project: '8.4'
       metadata:
         blocking: true
         enabled: true
@@ -346,20 +346,12 @@ grumphp:
         priority: 0
         task: null
     securitychecker_composeraudit:
+      abandoned: null
       format: null
       locked: true
       no_dev: true
       run_always: true
       working_dir: null
-      metadata:
-        blocking: true
-        enabled: true
-        label: null
-        priority: 0
-        task: null
-    shell:
-      scripts:
-        - # Add here your scripts and your commands.
       metadata:
         blocking: true
         enabled: true
