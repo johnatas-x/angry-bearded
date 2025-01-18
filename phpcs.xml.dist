@@ -25,7 +25,7 @@
     <exclude-pattern>*/\.bzr/*</exclude-pattern>
 
     <!-- Core config. -->
-    <config name="drupal_core_version" value="10"/>
+    <config name="drupal_core_version" value="11"/>
 
     <!-- Drupal coding standards. -->
     <rule ref="vendor/drupal/coder/coder_sniffer/Drupal"/>
@@ -48,6 +48,7 @@
     <!-- Slevomat coding standards adapted to Drupal 11. -->
     <rule ref="SlevomatCodingStandard">
         <exclude name="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys.IncorrectKeyOrder" />
+        <exclude name="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion.DisallowedConstructorPropertyPromotion" />
         <exclude name="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants.DisallowedLateStaticBindingForConstant" />
         <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
         <exclude name="SlevomatCodingStandard.Classes.ParentCallSpacing.IncorrectLinesCountBeforeControlStructure" />
@@ -84,6 +85,7 @@
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
         <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.UselessAnnotation" />
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
+        <exclude name="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint.UselessVarAnnotation" />
     </rule>
 
     <!--
@@ -113,6 +115,6 @@
 
     <!-- PHPCompatibility. -->
     <rule ref="PHPCompatibility"/>
-    <config name="testVersion" value="8.4"/>
+    <config name="testVersion" value="8.5"/>
 
 </ruleset>

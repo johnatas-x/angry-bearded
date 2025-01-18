@@ -3,12 +3,46 @@
 # Specifically centered around hook/alters and lack of proper types.
 parameters:
     ignoreErrors:
+      # Procedural hooks.
       -
         message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
         paths:
+          - *.inc
           - *.install
           - *.module
+          - *.post_update.php
           - *.theme
+      -
+        message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified in iterable type array\./'
+        paths:
+          - *.inc
+          - *.install
+          - *.module
+          - *.post_update.php
+          - *.theme
+      -
+        message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
+        paths:
+          - *.inc
+          - *.install
+          - *.module
+          - *.post_update.php
+          - *.theme
+
+      # Attributes hooks.
+      -
+        message: '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
+        paths:
+          - **/src/Hook/*.php
+      -
+        message: '/^Method [a-zA-Z0-9\\_:]+\(\) return type has no value type specified in iterable type array\./'
+        paths:
+          - **/src/Hook/*.php
+      -
+        message: '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
+        paths:
+          - **/src/Hook/*.php
+
       # new static() is a best practice in Drupal (especially for ContainerInjectionInterface::create methods in a non-final class), so we cannot fix that.
       - "#^Unsafe usage of new static#"
 
