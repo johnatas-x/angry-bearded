@@ -10,6 +10,13 @@ The rules are voluntarily hard, don't hesitate to adapt the .dist files to your 
 
 ## Installation
 
+> [!IMPORTANT]  
+> Use 1.6.x releases for php 8.1
+> 
+> Use 1.7.x releases for php 8.2
+> 
+> Use 2.x releases for php >= 8.3 and for Drupal 11
+
 ### When using drupal/core-composer-scaffold (recommended)
 
 In most cases, you would already be using the [`drupal/core-composer-scaffold`](https://packagist.org/packages/drupal/core-composer-scaffold) package if you have set up using the latest Drupal templates. This package uses `core-composer-scaffold` to set up configuration files in your project. To make this work, add this package name in your composer's `extra.drupal-scaffold.allowed-packages` section.
