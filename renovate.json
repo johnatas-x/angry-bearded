@@ -6,5 +6,21 @@
     ":reviewer(arg0)"
   ],
   "assignees": ["johnatas-x"],
-  "prHourlyLimit": 3
+  "prHourlyLimit": 3,
+  "packageRules": [
+    {
+      "groupName": "GrumPHP",
+      "matchPackageNames": [
+        "johnatas-x/grumphp-**",
+        "phpro/grumphp"
+      ]
+    },
+    {
+      "groupName": "PHPStan",
+      "matchPackageNames": [
+        "mglaman/phpstan-drupal",
+        "phpstan/**"
+      ]
+    }
+  ]
 }
