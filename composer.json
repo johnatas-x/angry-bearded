@@ -19,7 +19,7 @@
     "johnatas-x/grumphp-phpdd": "2.12.1",
     "johnatas-x/phpcpd": "6.0.5",
     "maglnet/composer-require-checker": "4.16.1",
-    "mglaman/phpstan-drupal": "2.0.3",
+    "mglaman/phpstan-drupal": "2.0.4",
     "php-parallel-lint/php-parallel-lint": "1.4.0",
     "phpcompatibility/php-compatibility": "dev-develop",
     "phpmd/phpmd": "2.15.0",
