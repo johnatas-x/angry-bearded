@@ -13,7 +13,7 @@
   "require": {
     "php": ">=8.3",
     "drupal/coder": "8.3.28",
-    "ergebnis/composer-normalize": "2.46.0",
+    "ergebnis/composer-normalize": "2.47.0",
     "friendsoftwig/twigcs": "6.5.0",
     "johnatas-x/grumphp-phpa": "2.12.1",
     "johnatas-x/grumphp-phpdd": "2.12.1",
