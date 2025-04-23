@@ -31,12 +31,8 @@
   <rule ref="vendor/drupal/coder/coder_sniffer/Drupal"/>
   <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 
-  <!--Generic PHP Sniff-->
-  <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
-  <rule ref="Squiz.PHP.CommentedOutCode" />
-  <rule ref="Squiz.PHP.Eval" />
-
   <!-- Generic PHP Sniff. -->
+  <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
   <rule ref="Squiz.PHP.CommentedOutCode" />
   <rule ref="Squiz.PHP.Eval" />
   <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
@@ -103,7 +99,7 @@
     </properties>
   </rule>
 
-  <!-- Set max function length to 35 lines (best compromise in my opinion). -->
+  <!-- Set max function length to 35 lines (the best compromise in my opinion). -->
   <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
     <properties>
       <property name="maxLinesLength" value="35"/>
@@ -120,7 +116,7 @@
   <config name="testVersion" value="8.5"/>
 
   <!--
-    Compulsory as long as PHP_CS is not compatible PHP 8.4.
+    Compulsory as long as PHP_CS is not compatible with PHP 8.4.
     https://github.com/PHPCSStandards/PHP_CodeSniffer/issues/734
   -->
   <rule ref="Internal.Exception">
