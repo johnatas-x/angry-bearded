@@ -1,23 +1,49 @@
-# Angry bearded
+# 🐦 Angry bearded
 
-<img src="resources/angry-bearderd.png" align="left" width="128"/>
+<img src="resources/angry-bearderd.png" align="left" width="128" alt="logo"/>
 
 This tool is a pre-configured [GrumPHP](https://github.com/phpro/grumphp) for Drupal 10 & 11 projects.
 
-The rules are voluntarily hard, don't hesitate to adapt the .dist files to your needs.
+The rules are intentionally strict — feel free to customize the .dist files to suit your needs.
 
-`.editorconfig` file and a Qodana template are included too.
+A `.editorconfig` file and a Qodana template are also included.
 
-## Installation
+## 🔧 Included tools
+- ComposerRequireChecker
+- Drupal Coder
+- PHP Assumptions (phpa)
+- PHP Copy/Paste Detector (phpcpd)
+- PHP Magic Number Detector (phpmnd)
+- PHP Parallel Lint
+- PHPMD
+- PHPStan
+  - PHPStan Deprecation Rules
+  - PHPStan Extension Installer
+  - phpstan-drupal
+- PHP_CodeSniffer
+  - PHP Compatibility Coding Standard for PHP CodeSniffer
+  - Slevomat Coding Standard
+- PhpDeprecationDetector (phpdd)
+- Twigcs
+  - Twig CS Fixer
+- composer-normalize
+
+## 🚀 Installation
 
 > [!IMPORTANT]  
-> Use 1.6.x releases for php 8.1
+> This tool is compatible with multiple versions of Drupal as well as multiple versions of PHP.
 > 
-> Use 1.7.x releases for php 8.2
-> 
-> Use 2.x releases for php >= 8.3 and for Drupal 11
+> Choose the appropriate release for your situation using the table below:
+>
+>| 	             | **Drupal 10** 	 | **Drupal 11** 	 | **Drupal 12** 	 |
+>|---------------|-----------------|-----------------|-----------------|
+>| **PHP 8.1** 	 | `1.6.*`       	 | NA            	 | NA            	 |
+>| **PHP 8.2** 	 | `1.7.*`       	 | NA            	 | NA            	 |
+>| **PHP 8.3** 	 | `2.*`         	 | `2.*`         	 | NA            	 |
+>| **PHP 8.4** 	 | `2.*`         	 | `2.*`         	 | _coming soon_ 	 |
+>| **PHP 8.5** 	 | _coming soon_ 	 | _coming soon_ 	 | _coming soon_ 	 |
 
-### When using drupal/core-composer-scaffold (recommended)
+### ➡️ When using drupal/core-composer-scaffold (recommended)
 
 In most cases, you would already be using the [`drupal/core-composer-scaffold`](https://packagist.org/packages/drupal/core-composer-scaffold) package if you have set up using the latest Drupal templates. This package uses `core-composer-scaffold` to set up configuration files in your project. To make this work, add this package name in your composer's `extra.drupal-scaffold.allowed-packages` section.
 
@@ -36,21 +62,45 @@ In most cases, you would already be using the [`drupal/core-composer-scaffold`](
 
 Now, run `composer require` to include the package in your application. Since the package is now allowed, the `core-composer-scaffold` package will copy the configuration files.
 
-See [More about scaffolding](#more-about-scaffolding) for more details.
+```bash
+# Replace "2.*" with your compatible release (see below).
+composer require --dev johnatas-x/angry-bearded:2.*
+```
 
-### Without drupal/core-composer-scaffold
+#### 💡 More about scaffolding
 
-If you're not using the scaffolding plugin, the package won't copy the configuration files as expected.
+As described before, this package uses [`drupal/core-composer-scaffold`](https://github.com/drupal/core-composer-scaffold) plugin to scaffold a few files to the project root. While not strictly required, it’s likely already part of your setup if you're building a Drupal site.
+
+The scaffolding process runs during every Composer operation and may overwrite files. Only the file `grumphp.yml.dist` is not overwritten during later operations. If you are customizing any of the other configuration files and don't want the updates to overwrite your changes, you can override the behavior in your composer.json file. For example, to skip `phpmd.xml.dist` from being overwritten, add this to your `composer.json`:
+
+```json
+  "name": "my/project",
+  ...
+  "extra": {
+    "drupal-scaffold": {
+      "file-mapping": {
+        "[project-root]/phpmd.xml.dist": false
+      }
+    }
+  }
+```
+
+For more details, read the ["Excluding Scaffold files"](https://github.com/drupal/core-composer-scaffold#excluding-scaffold-files) section of the [documentation](https://github.com/drupal/core-composer-scaffold/blob/8.8.x/README.md) for the core-composer-scaffold plugin.
+
+### ➡️ Without drupal/core-composer-scaffold
+
+If you're not using the scaffolding plugin, the package won't automatically copy the configuration files.
 
 First, run `composer require` to include the package in your application.
 
 ```bash
-composer require --dev johnatas-x/angry-bearded
+# Replace "2.*" with your compatible release (see below).
+composer require --dev johnatas-x/angry-bearded:2.*
 ```
 
-If you don't already have a `grumphp.yml` file in your project, GrumPHP would ask you to create one. Answer "No" to the prompt.
+If you don't already have a `grumphp.yml` file in your project, GrumPHP will prompt you to create one — select "No."
 
-Then, copy all the `*.dist` from the library to your project root. The files copied are:
+Then, copy all `*.dist` files from the package to your project root. The files copied are:
 
 * .editorconfig.dist
 * grumphp.yml.dist
@@ -60,27 +110,35 @@ Then, copy all the `*.dist` from the library to your project root. The files cop
 * phpstan-drupal.neon.dist
 * qodana.yaml.dist
 
-```bash
-cp vendor/johnatas-x/angry-bearded/*.dist .
-```
+> [!NOTE]
+> For deprecated checks only with PHPStan Drupal, copy `phpstan-drupal-deprecated.neon.dist` instead of both `phpstan.neon.dist` and `phpstan-drupal.neon.dist`.
 
-## Usage
+> [!TIP]
+> To copy all files, you can run:
+> ```bash
+> cp vendor/johnatas-x/angry-bearded/*.dist .
+> ```
 
-No additional steps required, but if git hooks aren't fired, run `php ./vendor/bin/grumphp git:init`. For additional commands, look at [grumhp's documentation](https://github.com/phpro/grumphp/blob/master/doc/commands.md).
+## 🚧 Usage
 
-## Customising
+No additional setup is required. However, if Git hooks aren’t triggering, run: `php ./vendor/bin/grumphp git:init`.
 
-* Almost all customising begins with first copying the `grumphp.yml.dist` file to your project. Make sure you have the file.
-* :warning: If some phpstan exceptions do not apply to your project, comment out the lines otherwise an error will be raised.
-* By default, Drupal logo is used on success output, you can use GrumPHP's logo modifying `ascii` in `grumphp.yml`
+For additional commands, look at [grumhp's documentation](https://github.com/phpro/grumphp/blob/master/doc/commands.md).
 
-### Adding tasks
+## 💈 Customising
 
-There are various tasks you can add and customise in your grumphp.yml. Read the [online documentation for GrumPHP tasks](https://github.com/phpro/grumphp/blob/master/doc/tasks.md) to see the tasks you can use and configure.
+* Most customizations start by copying the `grumphp.yml.dist` file to your project root. Make sure you have the file.
+* By default, the Drupal logo is used in successful outputs, but you can use GrumPHP's logo modifying `ascii` in `grumphp.yml` or using your own logo.
 
-### Forcing commit message format
+### ➕ Adding tasks
 
-To configure commit message structure, use the [git_commit_message task](https://github.com/phpro/grumphp/blob/master/doc/tasks/git_commit_message.md). For example, to enforce the commit message contains the Jira issue ID, use the rule as the following snippet. More options are [documented online](https://github.com/phpro/grumphp/blob/master/doc/tasks/git_commit_message.md).
+You can add and customize various tasks in your `grumphp.yml`.
+
+Read the [online documentation for GrumPHP tasks](https://github.com/phpro/grumphp/blob/master/doc/tasks.md) to see the tasks you can use and configure.
+
+### 🛂 Forcing commit message format
+
+To configure the commit message structure, use the [git_commit_message task](https://github.com/phpro/grumphp/blob/master/doc/tasks/git_commit_message.md). For example, to enforce the commit message contains the YouTrack issue ID, use the rule as the following snippet. More options are [documented online](https://github.com/phpro/grumphp/blob/master/doc/tasks/git_commit_message.md).
 
 ```yaml
 # grumphp.yml
@@ -91,9 +149,9 @@ grumphp:
         Must contain issue number: /YouTrack #\d+/
 ```
 
-### Disable commit banners
+### 🚫 Disable commit banners
 
-GrumPHP supports banners to celebrate (or scold) on your commit. This is fun but it is possible it gets on your nerves. If you don’t want it, edit the grumphp.yml file and replace the following parameters:
+GrumPHP supports banners to celebrate (or scold) on your commit. This is fun, but it is possible it gets on your nerves. If you don’t want it, edit the grumphp.yml file and replace the following parameters:
 
 ```yaml
 # grumphp.yml
@@ -109,23 +167,3 @@ grumphp:
     ascii:
         succeeded: ~
 ```
-
-## More about scaffolding
-
-As described before, this package uses [`drupal/core-composer-scaffold`](https://github.com/drupal/core-composer-scaffold) plugin to scaffold a few files to the project root. This is not required but there is a good chance you are already using it if you're building a Drupal site.
-
-The scaffolding operation runs with every composer operation and overwrites files. Only the file `grumphp.yml.dist` is not overwritten during subsequent operations. If you are customising any of the other configuration files and don't want the updates to overwrite your changes, you can override the behaviour in your composer.json file. For example, to skip `phpmd.xml.dist` from being overwritten, add this to your `composer.json`:
-
-```json
-  "name": "my/project",
-  ...
-  "extra": {
-    "drupal-scaffold": {
-      "file-mapping": {
-        "[project-root]/phpmd.xml.dist": false
-      }
-    }
-  }
-```
-
-For more details, read the ["Excluding Scaffold files"](https://github.com/drupal/core-composer-scaffold#excluding-scaffold-files) section of the [documentation](https://github.com/drupal/core-composer-scaffold/blob/8.8.x/README.md) for the core-composer-scaffold plugin.
