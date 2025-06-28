@@ -69,7 +69,8 @@
                     \Drupal\file\Entity\File,
                     \Drupal\media\Entity\Media,
                     \Drupal\node\Entity\Node,
-                    \Drupal\user\Entity\User
+                    \Drupal\user\Entity\User,
+                    \Drush\Drush
                 </value>
             </property>
         </properties>
@@ -88,7 +89,7 @@
     <rule ref="rulesets/naming.xml/ShortVariable">
         <properties>
             <property name="minimum" value="3"/>
-            <property name="exceptions" value="id"/>
+            <property name="exceptions" value="id,io"/>
         </properties>
     </rule>
 
