@@ -13,6 +13,7 @@
   "require": {
     "php": ">=8.3",
     "drupal/coder": "8.3.30",
+    "ekino/phpstan-banned-code": "v3.0.0",
     "ergebnis/composer-normalize": "2.47.0",
     "friendsoftwig/twigcs": "6.5.0",
     "johnatas-x/grumphp-phpa": "2.13.0",

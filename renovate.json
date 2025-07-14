@@ -18,6 +18,7 @@
     {
       "groupName": "PHPStan",
       "matchPackageNames": [
+        "ekino/phpstan-banned-code",
         "mglaman/phpstan-drupal",
         "phpstan/**"
       ]
