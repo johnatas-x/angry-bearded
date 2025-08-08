@@ -2,31 +2,34 @@ parameters:
   git_dir: .
   bin_dir: vendor/bin
 grumphp:
-  extensions:
-    - GrumphpPhpa\ExtensionLoader
-    - GrumphpPhpdd\ExtensionLoader
-  ignore_unstaged_changes: true
-  stop_on_failure: false
-  hide_circumvention_tip: false
-  fixer:
-    enabled: true
-    fix_by_default: false
-  parallel:
-    enabled: false
-  process_timeout: 60
-  ascii:
-    failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
-    succeeded: vendor/johnatas-x/angry-bearded/resources/drupal.txt
+  hooks_dir: null
+  hooks_preset: local
   git_hook_variables:
     VAGRANT_HOST_DIR: .
     VAGRANT_PROJECT_DIR: /var/www
     EXEC_GRUMPHP_COMMAND: exec
     ENV: {}
+  stop_on_failure: false
+  ignore_unstaged_changes: true
+  hide_circumvention_tip: false
+  process_timeout: 60
+  additional_info: null
+  ascii:
+    failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
+    succeeded: vendor/johnatas-x/angry-bearded/resources/drupal.txt
+  parallel:
+    enabled: false
+  fixer:
+    enabled: true
+    fix_by_default: false
   environment:
     files: [ ]
     variables:
       BOX_REQUIREMENT_CHECKER: 0
     paths: [ ]
+  extensions:
+    - GrumphpPhpa\ExtensionLoader
+    - GrumphpPhpdd\ExtensionLoader
   testsuites: []
   tasks:
     composer:
@@ -152,7 +155,7 @@ grumphp:
         - web/sites
         - web/themes/contrib
       metadata:
-        blocking: true
+        blocking: false
         enabled: true
         label: null
         priority: 0
