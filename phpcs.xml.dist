@@ -12,7 +12,7 @@
   <arg name="colors"/>
   <arg name="extensions" value="css,inc,info,install,md,module,php,profile,test,theme,txt,yml"/>
   <arg name="parallel" value="75"/>
-  <arg value="np"/>
+  <arg value="w"/>
 
   <!-- Excludes -->
   <exclude-pattern>*/tests/*</exclude-pattern>
