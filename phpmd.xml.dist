@@ -13,20 +13,7 @@
     <exclude-pattern>*/tests/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
 
-    <rule ref="rulesets/codesize.xml">
-        <exclude name="TooManyMethods"/>
-        <exclude name="ExcessiveClassComplexity"/>
-    </rule>
-    <rule ref="rulesets/codesize.xml/TooManyMethods">
-        <properties>
-            <property name="maxmethods" value="50" />
-        </properties>
-    </rule>
-    <rule ref="rulesets/codesize.xml/ExcessiveClassComplexity">
-        <properties>
-            <property name="maximum" value="100" />
-        </properties>
-    </rule>
+    <rule ref="rulesets/codesize.xml" />
 
     <rule ref="rulesets/cleancode.xml">
         <exclude name="StaticAccess"/>
