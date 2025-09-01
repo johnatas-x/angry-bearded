@@ -14,7 +14,7 @@
     "php": ">=8.3",
     "drupal/coder": "8.3.30",
     "ekino/phpstan-banned-code": "v3.0.0",
-    "ergebnis/composer-normalize": "2.48.0",
+    "ergebnis/composer-normalize": "2.48.1",
     "friendsoftwig/twigcs": "6.5.0",
     "johnatas-x/grumphp-phpa": "2.15.0",
     "johnatas-x/grumphp-phpdd": "2.15.0",
