@@ -1,21 +1,25 @@
 {
   "name": "johnatas-x/angry-bearded",
-  "type": "project",
   "description": "Code quality checking tools for Drupal 10/11 projects.",
-  "homepage": "https://github.com/johnatas-x/angry-bearded",
   "license": "proprietary",
+  "type": "project",
   "authors": [
     {
       "name": "Johnatas",
       "role": "Maintainer"
     }
   ],
+  "homepage": "https://github.com/johnatas-x/angry-bearded",
+  "support": {
+    "issues": "https://github.com/johnatas-x/angry-bearded/issues",
+    "source": "https://github.com/johnatas-x/angry-bearded"
+  },
   "require": {
     "php": ">=8.3",
-    "drupal/coder": "8.3.30",
-    "ekino/phpstan-banned-code": "v3.0.0",
+    "ekino/phpstan-banned-code": "3.0.0",
     "ergebnis/composer-normalize": "2.48.2",
     "friendsoftwig/twigcs": "6.5.0",
+    "johnatas-x/coder": "8.3.x-dev",
     "johnatas-x/grumphp-phpa": "2.15.0",
     "johnatas-x/grumphp-phpdd": "2.15.0",
     "johnatas-x/phpcpd": "6.0.5",
@@ -29,50 +33,60 @@
     "phpstan/phpstan": "2.1.28",
     "phpstan/phpstan-deprecation-rules": "2.0.3",
     "povils/phpmnd": "3.6.0",
-    "slevomat/coding-standard": "8.22.1",
-    "squizlabs/php_codesniffer": "3.13.4",
+    "slevomat/coding-standard": "8.23.0",
+    "squizlabs/php_codesniffer": "4.0.0",
     "vincentlanglet/twig-cs-fixer": "3.9.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
   },
-  "support": {
-    "issues": "https://github.com/johnatas-x/angry-bearded/issues",
-    "source": "https://github.com/johnatas-x/angry-bearded"
+  "suggest": {
+    "drupal/core-composer-scaffold": "Scaffold relevant files in project root. Add johnatas-x/angry-bearded to extra.drupal-scaffold.allowed-packages."
   },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "johnatas-x/coder",
+        "version": "dev-8.3.x",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/johnatas-x/coder.git",
+          "reference": "8.3.x"
+        }
+      }
+    }
+  ],
   "minimum-stability": "dev",
   "prefer-stable": true,
   "config": {
-    "sort-packages": true,
     "allow-plugins": {
-      "phpstan/extension-installer": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
       "phpro/grumphp": true,
-      "ergebnis/composer-normalize": true
-    }
+      "phpstan/extension-installer": true
+    },
+    "sort-packages": true
   },
   "extra": {
+    "branch-alias": {
+      "dev-main": "1.0.x-dev"
+    },
     "drupal-scaffold": {
       "file-mapping": {
+        "[project-root]/.editorconfig.dist": ".editorconfig.dist",
         "[project-root]/grumphp.yml.dist": {
           "mode": "replace",
-          "path": "grumphp.yml.dist",
-          "overwrite": false
+          "overwrite": false,
+          "path": "grumphp.yml.dist"
         },
-        "[project-root]/.editorconfig.dist": ".editorconfig.dist",
         "[project-root]/phpcs.xml.dist": "phpcs.xml.dist",
         "[project-root]/phpmd.xml.dist": "phpmd.xml.dist",
-        "[project-root]/phpstan-drupal.neon.dist": "phpstan-drupal.neon.dist",
         "[project-root]/phpstan-drupal-deprecated.neon.dist": "phpstan-drupal-deprecated.neon.dist",
+        "[project-root]/phpstan-drupal.neon.dist": "phpstan-drupal.neon.dist",
         "[project-root]/phpstan.neon.dist": "phpstan.neon.dist",
         "[project-root]/qodana.yaml.dist": "qodana.yaml.dist"
       }
-    },
-    "branch-alias": {
-      "dev-main": "1.0.x-dev"
     }
-  },
-  "suggest": {
-    "drupal/core-composer-scaffold": "Scaffold relevant files in project root. Add johnatas-x/angry-bearded to extra.drupal-scaffold.allowed-packages."
   }
 }
