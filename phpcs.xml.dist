@@ -1,125 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset name="angry-bearded">
-  <description>PHP CodeSniffer configuration for Drupal 11 development.</description>
+    <description>PHP CodeSniffer configuration for Drupal 11 development.</description>
 
-  <!-- Files -->
-  <file>web/modules/custom</file>
-  <file>web/profiles/custom</file>
-  <file>web/themes/custom</file>
+    <!-- Files -->
+    <file>web/modules/custom</file>
+    <file>web/profiles/custom</file>
+    <file>web/themes/custom</file>
 
-  <!-- Args -->
-  <arg name="basepath" value="."/>
-  <arg name="colors"/>
-  <arg name="extensions" value="css,inc,info,install,md,module,php,profile,test,theme,txt,yml"/>
-  <arg name="parallel" value="75"/>
-  <arg value="w"/>
+    <!-- Args -->
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg name="extensions" value="css,inc,info,install,md,module,php,profile,test,theme,txt,yml"/>
+    <arg name="parallel" value="75"/>
+    <arg value="w"/>
 
-  <!-- Excludes -->
-  <exclude-pattern>*/tests/*</exclude-pattern>
-  <exclude-pattern>*/Tests/*</exclude-pattern>
-  <exclude-pattern>*.css</exclude-pattern>
-  <exclude-pattern>*.js</exclude-pattern>
-  <exclude-pattern>*/\.git/*</exclude-pattern>
-  <exclude-pattern>*/\.svn/*</exclude-pattern>
-  <exclude-pattern>*/\.hg/*</exclude-pattern>
-  <exclude-pattern>*/\.bzr/*</exclude-pattern>
+    <!-- Excludes -->
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>*/Tests/*</exclude-pattern>
+    <exclude-pattern>*.css</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*/\.git/*</exclude-pattern>
+    <exclude-pattern>*/\.svn/*</exclude-pattern>
+    <exclude-pattern>*/\.hg/*</exclude-pattern>
+    <exclude-pattern>*/\.bzr/*</exclude-pattern>
 
-  <!-- Core config. -->
-  <config name="drupal_core_version" value="11"/>
+    <!-- Core config. -->
+    <config name="drupal_core_version" value="11"/>
 
-  <!-- Drupal coding standards. -->
-  <rule ref="vendor/drupal/coder/coder_sniffer/Drupal"/>
-  <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
+    <!-- Drupal coding standards. -->
+    <rule ref="vendor/drupal/coder/coder_sniffer/Drupal"/>
+    <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 
-  <!-- Generic PHP Sniff. -->
-  <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
-  <rule ref="Squiz.PHP.CommentedOutCode" />
-  <rule ref="Squiz.PHP.Eval" />
-  <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
-    <!-- https://www.drupal.org/project/coder/issues/3355778 -->
-    <!-- https://www.drupal.org/project/drupal/issues/2908266 -->
-    <severity>0</severity>
-  </rule>
+    <!-- Generic PHP Sniff. -->
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing" />
+    <rule ref="Squiz.PHP.CommentedOutCode" />
+    <rule ref="Squiz.PHP.Eval" />
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoKeySpecified">
+        <!-- https://www.drupal.org/project/coder/issues/3355778 -->
+        <!-- https://www.drupal.org/project/drupal/issues/2908266 -->
+        <severity>0</severity>
+    </rule>
 
-  <!-- Slevomat coding standards adapted to Drupal 11. -->
-  <rule ref="SlevomatCodingStandard">
-    <exclude name="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys.IncorrectKeyOrder" />
-    <exclude name="SlevomatCodingStandard.Attributes.AttributesOrder" />
-    <exclude name="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion.DisallowedConstructorPropertyPromotion" />
-    <exclude name="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants.DisallowedLateStaticBindingForConstant" />
-    <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
-    <exclude name="SlevomatCodingStandard.Classes.ParentCallSpacing.IncorrectLinesCountBeforeControlStructure" />
-    <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal.ClassNeitherAbstractNorFinal" />
-    <exclude name="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature.RequiredSingleLineSignature" />
-    <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
-    <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing.IncorrectLinesCountBetweenDifferentAnnotationsTypes" />
-    <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
-    <exclude name="SlevomatCodingStandard.Commenting.UselessInheritDocComment.UselessInheritDocComment" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.DisallowEmpty.DisallowedEmpty" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.DisallowNullSafeObjectOperator.DisallowedNullSafeObjectOperator" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator.DisallowedShortTernaryOperator" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing.IncorrectLinesCountAfterLastControlStructure" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses.UsedWithParentheses" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses.UselessParentheses" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.RequireYodaComparison.RequiredYodaComparison" />
-    <exclude name="SlevomatCodingStandard.Exceptions.DisallowNonCapturingCatch.DisallowedNonCapturingCatch" />
-    <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName.NoMatchBetweenTypeNameAndFileName" />
-    <exclude name="SlevomatCodingStandard.Functions.DisallowArrowFunction.DisallowedArrowFunction" />
-    <exclude name="SlevomatCodingStandard.Functions.DisallowNamedArguments.DisallowedNamedArgument" />
-    <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration.DisallowedTrailingComma" />
-    <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall.MissingTrailingComma" />
-    <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse.MissingTrailingComma" />
-    <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration.MissingTrailingComma" />
-    <exclude name="SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter" />
-    <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException" />
-    <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants.NonFullyQualified" />
-    <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions.NonFullyQualified" />
-    <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName" />
-    <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedNameWithoutNamespace" />
-    <exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces.NonFullyQualified" />
-    <exclude name="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator.DisallowedNumericLiteralSeparator"/>
-    <exclude name="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators.DisallowedPostDecrementOperator" />
-    <exclude name="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators.DisallowedPostIncrementOperator" />
-    <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedAssigningByReference" />
-    <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference" />
-    <exclude name="SlevomatCodingStandard.PHP.RequireExplicitAssertion.RequiredExplicitAssertion" />
-    <exclude name="SlevomatCodingStandard.TypeHints.ClassConstantTypeHint.UselessVarAnnotation" />
-    <exclude name="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax.DisallowedArrayTypeHintSyntax" />
-    <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint" />
-    <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
-    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.UselessAnnotation" />
-    <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
-    <exclude name="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat" />
-    <exclude name="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint.UselessVarAnnotation" />
-  </rule>
+    <!-- Slevomat coding standards adapted to Drupal 11. -->
+    <rule ref="SlevomatCodingStandard">
+        <exclude name="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys.IncorrectKeyOrder" />
+        <exclude name="SlevomatCodingStandard.Attributes.AttributesOrder" />
+        <exclude name="SlevomatCodingStandard.Classes.DisallowConstructorPropertyPromotion.DisallowedConstructorPropertyPromotion" />
+        <exclude name="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants.DisallowedLateStaticBindingForConstant" />
+        <exclude name="SlevomatCodingStandard.Classes.ForbiddenPublicProperty.ForbiddenPublicProperty" />
+        <exclude name="SlevomatCodingStandard.Classes.ParentCallSpacing.IncorrectLinesCountBeforeControlStructure" />
+        <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal.ClassNeitherAbstractNorFinal" />
+        <exclude name="SlevomatCodingStandard.Classes.RequireSingleLineMethodSignature.RequiredSingleLineSignature" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
+        <exclude name="SlevomatCodingStandard.Classes.SuperfluousTraitNaming.SuperfluousSuffix" />
+        <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing.IncorrectLinesCountBetweenDifferentAnnotationsTypes" />
+        <exclude name="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration.MissingVariable" />
+        <exclude name="SlevomatCodingStandard.Commenting.UselessInheritDocComment.UselessInheritDocComment" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.DisallowEmpty.DisallowedEmpty" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.DisallowNullSafeObjectOperator.DisallowedNullSafeObjectOperator" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.DisallowShortTernaryOperator.DisallowedShortTernaryOperator" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing.IncorrectLinesCountAfterLastControlStructure" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses.UsedWithParentheses" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses.UselessParentheses" />
+        <exclude name="SlevomatCodingStandard.ControlStructures.RequireYodaComparison.RequiredYodaComparison" />
+        <exclude name="SlevomatCodingStandard.Exceptions.DisallowNonCapturingCatch.DisallowedNonCapturingCatch" />
+        <exclude name="SlevomatCodingStandard.Files.TypeNameMatchesFileName.NoMatchBetweenTypeNameAndFileName" />
+        <exclude name="SlevomatCodingStandard.Functions.DisallowArrowFunction.DisallowedArrowFunction" />
+        <exclude name="SlevomatCodingStandard.Functions.DisallowNamedArguments.DisallowedNamedArgument" />
+        <exclude name="SlevomatCodingStandard.Functions.DisallowTrailingCommaInDeclaration.DisallowedTrailingComma" />
+        <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall.MissingTrailingComma" />
+        <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse.MissingTrailingComma" />
+        <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration.MissingTrailingComma" />
+        <exclude name="SlevomatCodingStandard.Functions.UnusedParameter.UnusedParameter" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions.NonFullyQualifiedException" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalConstants.NonFullyQualified" />
+        <exclude name="SlevomatCodingStandard.Namespaces.FullyQualifiedGlobalFunctions.NonFullyQualified" />
+        <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName" />
+        <exclude name="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedNameWithoutNamespace" />
+        <exclude name="SlevomatCodingStandard.Namespaces.UseOnlyWhitelistedNamespaces.NonFullyQualified" />
+        <exclude name="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator.DisallowedNumericLiteralSeparator"/>
+        <exclude name="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators.DisallowedPostDecrementOperator" />
+        <exclude name="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators.DisallowedPostIncrementOperator" />
+        <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedAssigningByReference" />
+        <exclude name="SlevomatCodingStandard.PHP.DisallowReference.DisallowedPassingByReference" />
+        <exclude name="SlevomatCodingStandard.PHP.RequireExplicitAssertion.RequiredExplicitAssertion" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ClassConstantTypeHint.UselessVarAnnotation" />
+        <exclude name="SlevomatCodingStandard.TypeHints.DisallowArrayTypeHintSyntax.DisallowedArrayTypeHintSyntax" />
+        <exclude name="SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification" />
+        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.UselessAnnotation" />
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingTraversableTypeHintSpecification" />
+        <exclude name="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat" />
+        <exclude name="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint.UselessVarAnnotation" />
+    </rule>
 
-  <!--
-    Set cognitive complexity to easy level.
-      - Hard : 5
-      - Medium : 10
-      - Easy : 20
-  -->
-  <rule ref="SlevomatCodingStandard.Complexity.Cognitive">
-    <properties>
-      <property name="warningThreshold" value="21"/>
-      <property name="errorThreshold " value="21"/>
-    </properties>
-  </rule>
+    <!--
+      Set cognitive complexity to easy level.
+        - Hard : 5
+        - Medium : 10
+        - Easy : 20
+    -->
+    <rule ref="SlevomatCodingStandard.Complexity.Cognitive">
+        <properties>
+            <property name="warningThreshold" value="21"/>
+            <property name="errorThreshold " value="21"/>
+        </properties>
+    </rule>
 
-  <!-- Set max function length to 35 lines (the best compromise in my opinion). -->
-  <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
-    <properties>
-      <property name="maxLinesLength" value="35"/>
-    </properties>
-  </rule>
+    <!-- Set max function length to 35 lines (the best compromise in my opinion). -->
+    <rule ref="SlevomatCodingStandard.Functions.FunctionLength">
+        <properties>
+            <property name="maxLinesLength" value="35"/>
+        </properties>
+    </rule>
 
-  <!-- Mandatory for Drupal hooks & alters. -->
-  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint">
-    <exclude-pattern>*.module</exclude-pattern>
-  </rule>
+    <!-- Mandatory for Drupal hooks & alters. -->
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint">
+        <exclude-pattern>*.module</exclude-pattern>
+    </rule>
 
-  <!-- PHPCompatibility. -->
-  <rule ref="PHPCompatibility"/>
-  <config name="testVersion" value="8.5"/>
+    <!-- PHPCompatibility. -->
+    <rule ref="PHPCompatibility"/>
+    <config name="testVersion" value="8.5"/>
 
 </ruleset>

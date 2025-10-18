@@ -7,6 +7,7 @@ parameters:
       -
         message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
         paths:
+          - *.deploy.php
           - *.inc
           - *.install
           - *.module
@@ -15,6 +16,7 @@ parameters:
       -
         message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified in iterable type array\./'
         paths:
+          - *.deploy.php
           - *.inc
           - *.install
           - *.module
@@ -23,25 +25,29 @@ parameters:
       -
         message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
         paths:
+          - *.deploy.php
           - *.inc
           - *.install
           - *.module
           - *.post_update.php
           - *.theme
 
-      # Attributes hooks.
+      # Attributes hooks and inherited forms.
       -
         message: '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
         paths:
           - **/src/Hook/*.php
+          - **/src/Form/*.php
       -
         message: '/^Method [a-zA-Z0-9\\_:]+\(\) return type has no value type specified in iterable type array\./'
         paths:
           - **/src/Hook/*.php
+          - **/src/Form/*.php
       -
         message: '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
         paths:
           - **/src/Hook/*.php
+          - **/src/Form/*.php
 
       # new static() is a best practice in Drupal (especially for ContainerInjectionInterface::create methods in a non-final class), so we cannot fix that.
       - "#^Unsafe usage of new static#"
@@ -52,3 +58,5 @@ parameters:
       - "#^Missing cache backend declaration for performance.#"
       - "#cache tag might be unclear and does not contain the cache key in it.#"
       - "#^Class .* extends @internal class#"
+      # Drupal's mixed...
+      - "#^Cannot .* on mixed.#"

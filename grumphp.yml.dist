@@ -7,25 +7,25 @@ grumphp:
   git_hook_variables:
     VAGRANT_HOST_DIR: .
     VAGRANT_PROJECT_DIR: /var/www
-    EXEC_GRUMPHP_COMMAND: exec
-    ENV: {}
+    EXEC_GRUMPHP_COMMAND: ddev exec php
+    ENV: { }
   stop_on_failure: false
-  ignore_unstaged_changes: true
-  hide_circumvention_tip: false
+  ignore_unstaged_changes: false
+  hide_circumvention_tip: true
   process_timeout: 60
   additional_info: null
   ascii:
     failed: vendor/johnatas-x/angry-bearded/resources/grumpy.txt
     succeeded: vendor/johnatas-x/angry-bearded/resources/drupal.txt
   parallel:
-    enabled: false
+    enabled: true
+    max_workers: 32
   fixer:
     enabled: true
     fix_by_default: false
   environment:
     files: [ ]
-    variables:
-      BOX_REQUIREMENT_CHECKER: 0
+    variables: { }
     paths: [ ]
   extensions:
     - GrumphpPhpa\ExtensionLoader
@@ -137,8 +137,7 @@ grumphp:
         priority: 0
         task: null
     jsonlint:
-      ignore_patterns:
-        - qodana.sarif.json
+      ignore_patterns: []
       detect_key_conflicts: false
       metadata:
         blocking: true
@@ -154,6 +153,7 @@ grumphp:
         - web/profiles/contrib
         - web/sites
         - web/themes/contrib
+        - web/.ht.router.php
       metadata:
         blocking: false
         enabled: true
@@ -323,7 +323,9 @@ grumphp:
       configuration: ~
       level: null
       force_patterns: [ ]
-      ignore_patterns: [ ]
+      ignore_patterns:
+        - web/.ht.router.php
+        - web/sites/default/settings.php
       triggered_by:
         - engine
         - inc

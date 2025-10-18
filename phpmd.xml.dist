@@ -1,85 +1,89 @@
 <?xml version="1.0"?>
 <ruleset
-        name="Drupal PHPMD rules"
-        xmlns="http://pmd.sf.net/ruleset/1.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
-        xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd"
+  name="Drupal PHPMD rules"
+  xmlns="http://pmd.sf.net/ruleset/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd"
+  xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd"
 >
-    <description>
-        Custom ruleset for Drupal 11 development.
-    </description>
+  <description>
+    Custom ruleset for Drupal 11 development.
+  </description>
 
-    <exclude-pattern>*/tests/*</exclude-pattern>
-    <exclude-pattern>*/vendor/*</exclude-pattern>
+  <exclude-pattern>*/tests/*</exclude-pattern>
+  <exclude-pattern>*/vendor/*</exclude-pattern>
 
-    <rule ref="rulesets/codesize.xml" />
+  <rule ref="rulesets/codesize.xml" />
 
-    <rule ref="rulesets/cleancode.xml">
-        <exclude name="StaticAccess"/>
-        <exclude name="MissingImport" />
-    </rule>
-    <rule ref="rulesets/cleancode.xml/MissingImport">
-        <properties>
-            <property name="ignore-global" value="true"/>
-        </properties>
-    </rule>
-    <rule ref="rulesets/cleancode.xml/StaticAccess">
-        <properties>
-            <property name="exceptions">
-                <value>
-                    \DateInterval,
-                    \DateTime,
-                    \DateTimeZone,
-                    \Drupal,
-                    \Drupal\Component\Plugin\Factory\DefaultFactory,
-                    \Drupal\Component\Serialization\Json,
-                    \Drupal\Component\Utility\Crypt,
-                    \Drupal\Component\Utility\Html,
-                    \Drupal\Component\Utility\NestedArray,
-                    \Drupal\Component\Utility\UrlHelper,
-                    \Drupal\Core\Access\AccessResult,
-                    \Drupal\Core\Annotation\Action,
-                    \Drupal\Core\Cache\Cache,
-                    \Drupal\Core\Datetime\DrupalDateTime,
-                    \Drupal\Core\Link,
-                    \Drupal\Core\Render\Element,
-                    \Drupal\Core\Render\Element\Checkboxes,
-                    \Drupal\Core\Render\Markup,
-                    \Drupal\Core\Site\Settings,
-                    \Drupal\Core\Url,
-                    \Drupal\block\Entity\Block,
-                    \Drupal\comment\Entity\Comment,
-                    \Drupal\config_pages\Entity\ConfigPages,
-                    \Drupal\field\Entity\FieldConfig,
-                    \Drupal\field\Entity\FieldStorageConfig,
-                    \Drupal\file\Entity\File,
-                    \Drupal\media\Entity\Media,
-                    \Drupal\node\Entity\Node,
-                    \Drupal\user\Entity\User,
-                    \Drush\Drush
-                </value>
-            </property>
-        </properties>
-    </rule>
+  <rule ref="rulesets/cleancode.xml">
+    <exclude name="StaticAccess"/>
+    <exclude name="MissingImport" />
+  </rule>
+  <rule ref="rulesets/cleancode.xml/MissingImport">
+    <properties>
+      <property name="ignore-global" value="true"/>
+    </properties>
+  </rule>
+  <rule ref="rulesets/cleancode.xml/StaticAccess">
+    <properties>
+      <property name="exceptions">
+        <value>
+          \DateInterval,
+          \DateTime,
+          \DateTimeZone,
+          \Drupal,
+          \Drupal\Component\Datetime\DateTimePlus,
+          \Drupal\Component\Plugin\Factory\DefaultFactory,
+          \Drupal\Component\Serialization\Json,
+          \Drupal\Component\Utility\Crypt,
+          \Drupal\Component\Utility\Html,
+          \Drupal\Component\Utility\NestedArray,
+          \Drupal\Component\Utility\UrlHelper,
+          \Drupal\Core\Access\AccessResult,
+          \Drupal\Core\Annotation\Action,
+          \Drupal\Core\Cache\Cache,
+          \Drupal\Core\Datetime\DrupalDateTime,
+          \Drupal\Core\Link,
+          \Drupal\Core\Render\Element,
+          \Drupal\Core\Render\Element\Checkboxes,
+          \Drupal\Core\Render\Markup,
+          \Drupal\Core\Site\Settings,
+          \Drupal\Core\Url,
+          \Drupal\block\Entity\Block,
+          \Drupal\comment\Entity\Comment,
+          \Drupal\config_pages\Entity\ConfigPages,
+          \Drupal\field\Entity\FieldConfig,
+          \Drupal\field\Entity\FieldStorageConfig,
+          \Drupal\file\Entity\File,
+          \Drupal\media\Entity\Media,
+          \Drupal\node\Entity\Node,
+          \Drupal\node\Entity\NodeType,
+          \Drupal\paragraphs\Entity\Paragraph,
+          \Drupal\path_alias\Entity\PathAlias,
+          \Drupal\user\Entity\User,
+          \Drush\Drush
+        </value>
+      </property>
+    </properties>
+  </rule>
 
-    <rule ref="rulesets/controversial.xml">
-        <exclude name="CamelCaseParameterName"/>
-        <exclude name="CamelCaseVariableName"/>
-    </rule>
+  <rule ref="rulesets/controversial.xml">
+    <exclude name="CamelCaseParameterName"/>
+    <exclude name="CamelCaseVariableName"/>
+  </rule>
 
-    <rule ref="rulesets/design.xml" />
+  <rule ref="rulesets/design.xml" />
 
-    <rule ref="rulesets/naming.xml">
-        <exclude name="ShortVariable"/>
-    </rule>
-    <rule ref="rulesets/naming.xml/ShortVariable">
-        <properties>
-            <property name="minimum" value="3"/>
-            <property name="exceptions" value="id,io"/>
-        </properties>
-    </rule>
+  <rule ref="rulesets/naming.xml">
+    <exclude name="ShortVariable"/>
+  </rule>
+  <rule ref="rulesets/naming.xml/ShortVariable">
+    <properties>
+      <property name="minimum" value="3"/>
+      <property name="exceptions" value="id,io"/>
+    </properties>
+  </rule>
 
-    <rule ref="rulesets/unusedcode.xml" />
+  <rule ref="rulesets/unusedcode.xml" />
 
 </ruleset>

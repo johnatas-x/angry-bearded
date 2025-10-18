@@ -3,7 +3,11 @@ includes:
 
 parameters:
     level: 10
+    reportUnmatchedIgnoredErrors: false
+    treatPhpDocTypesAsCertain: false
     inferPrivatePropertyTypeFromConstructor: true
+    scanDirectories:
+      - vendor/drush/drush
     paths:
       - web/modules/custom
       - web/profiles/custom
