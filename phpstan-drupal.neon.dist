@@ -60,3 +60,15 @@ parameters:
       - "#^Class .* extends @internal class#"
       # Drupal's mixed...
       - "#^Cannot .* on mixed.#"
+
+      # shipmonkDeadCode for Drupal.
+      - '#^Unused .*?::__construct$#'
+      -
+        message: '#^Unused .*::.*$#'
+        paths:
+          - **/src/Hook/*.php
+          - **/src/**/*Interface.php
+      -
+        message: '#^Unused .*?::content$#'
+        paths:
+          - **/src/Controller/*.php

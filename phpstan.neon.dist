@@ -12,3 +12,11 @@ parameters:
       - web/modules/custom
       - web/profiles/custom
       - web/themes/custom
+    shipmonkDeadCode:
+      detect:
+        deadMethods: true
+        deadConstants: true
+        deadEnumCases: true
+      usageProviders:
+        phpunit:
+          enabled: false
