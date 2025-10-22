@@ -20,6 +20,7 @@ A `.editorconfig` file and a Qodana template are also included.
   - PHPStan Deprecation Rules
   - PHPStan Extension Installer
   - phpstan-drupal
+  - Dead code detector for PHP
 - PHP_CodeSniffer
   - PHP Compatibility Coding Standard for PHP CodeSniffer
   - Slevomat Coding Standard
@@ -40,8 +41,8 @@ A `.editorconfig` file and a Qodana template are also included.
 >| **PHP 8.1** 	 | `1.6.*`       	 | NA            	 | NA            	 |
 >| **PHP 8.2** 	 | `1.7.*`       	 | NA            	 | NA            	 |
 >| **PHP 8.3** 	 | `2.*`         	 | `2.*`         	 | NA            	 |
->| **PHP 8.4** 	 | `2.*`         	 | `2.*`         	 | _coming soon_ 	 |
->| **PHP 8.5** 	 | _coming soon_ 	 | _coming soon_ 	 | _coming soon_ 	 |
+>| **PHP 8.4** 	 | `2.*`         	 | `2.*`         	 | NA           	 |
+>| **PHP 8.5** 	 | NA 	           | `3.*` 	         | `3.*` 	         |
 
 ### ➡️ When using drupal/core-composer-scaffold (recommended)
 
