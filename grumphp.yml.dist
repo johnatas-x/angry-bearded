@@ -342,6 +342,23 @@ grumphp:
         label: null
         priority: 0
         task: null
+    phpunit:
+      config_file: ~
+      testsuite: ~
+      group: [ ]
+      exclude_group: [ ]
+      always_execute: false
+      order: null
+      coverage-clover: null
+      coverage-html: null
+      coverage-php: null
+      coverage-xml: null
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpversion:
       project: '8.4'
       metadata:

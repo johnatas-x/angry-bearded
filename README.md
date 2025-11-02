@@ -17,6 +17,7 @@ A `.editorconfig` file and a Qodana template are also included.
 - PHP Parallel Lint
 - PHPMD
 - PHPStan
+  - PHPStan Banned Code
   - PHPStan Deprecation Rules
   - PHPStan Extension Installer
   - phpstan-drupal
@@ -25,6 +26,7 @@ A `.editorconfig` file and a Qodana template are also included.
   - PHP Compatibility Coding Standard for PHP CodeSniffer
   - Slevomat Coding Standard
 - PhpDeprecationDetector (phpdd)
+- PHPUnit
 - Twigcs
   - Twig CS Fixer
 - composer-normalize
