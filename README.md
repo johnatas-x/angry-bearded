@@ -38,13 +38,13 @@ A `.editorconfig` file and a Qodana template are also included.
 > 
 > Choose the appropriate release for your situation using the table below:
 >
->| 	             | **Drupal 10** 	 | **Drupal 11** 	 | **Drupal 12** 	 |
->|---------------|-----------------|-----------------|-----------------|
->| **PHP 8.1** 	 | `1.6.*`       	 | NA            	 | NA            	 |
->| **PHP 8.2** 	 | `1.7.*`       	 | NA            	 | NA            	 |
->| **PHP 8.3** 	 | `2.*`         	 | `2.*`         	 | NA            	 |
->| **PHP 8.4** 	 | `2.*`         	 | `2.*`         	 | NA           	 |
->| **PHP 8.5** 	 | NA 	           | `3.*` 	         | `3.*` 	         |
+>| 	             | **Drupal 10** 	 | **Drupal 11** 	          | **Drupal 12** 	 |
+>|---------------|-----------------|--------------------------|-----------------|
+>| **PHP 8.1** 	 | `1.6.*`       	 | NA            	          | NA            	 |
+>| **PHP 8.2** 	 | `1.7.*`       	 | NA            	          | NA            	 |
+>| **PHP 8.3** 	 | `2.*`         	 | `2.*`         	          | NA            	 |
+>| **PHP 8.4** 	 | `2.*`         	 | `2.*` or `3.*`         	 | NA           	  |
+>| **PHP 8.5** 	 | NA 	            | `3.*` 	                  | `3.*` 	         |
 
 ### ➡️ When using drupal/core-composer-scaffold (recommended)
 
