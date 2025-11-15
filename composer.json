@@ -15,8 +15,8 @@
     "source": "https://github.com/johnatas-x/angry-bearded"
   },
   "require": {
-    "php": ">=8.3",
-    "drupal/coder": "9.0.0-alpha1",
+    "php": ">=8.4",
+    "drupal/coder": "9.0.0-alpha1 as 8.3.31",
     "ekino/phpstan-banned-code": "3.0.0",
     "ergebnis/composer-normalize": "2.48.2",
     "friendsoftwig/twigcs": "6.5.0",
@@ -32,7 +32,6 @@
     "phpstan/extension-installer": "1.4.3",
     "phpstan/phpstan": "2.1.32",
     "phpstan/phpstan-deprecation-rules": "2.0.3",
-    "phpunit/phpunit": "12.4.3",
     "povils/phpmnd": "3.6.0",
     "shipmonk/dead-code-detector": "0.13.5",
     "slevomat/coding-standard": "8.24.0",

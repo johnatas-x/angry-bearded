@@ -355,7 +355,7 @@ grumphp:
       coverage-xml: null
       metadata:
         blocking: true
-        enabled: true
+        enabled: false
         label: null
         priority: 0
         task: null

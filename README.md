@@ -26,7 +26,6 @@ A `.editorconfig` file and a Qodana template are also included.
   - PHP Compatibility Coding Standard for PHP CodeSniffer
   - Slevomat Coding Standard
 - PhpDeprecationDetector (phpdd)
-- PHPUnit
 - Twigcs
   - Twig CS Fixer
 - composer-normalize
@@ -170,3 +169,20 @@ grumphp:
     ascii:
         succeeded: ~
 ```
+
+### 🔧 PHPUnit
+
+PHPUnit dependencies are not bundled in this package because version management is too complex given the compatibility constraints between this tool, multiple Drupal core versions, and PHP versions.
+
+Additionally, this tool intentionally does not include `drupal/core-dev` by default.
+
+However, everything is prepared for easy integration. If you want to add PHPUnit:
+1. Add `drupal/core-dev` (using the same version as your Drupal core) as a `require-dev` dependency ;
+2. Add `phpunit/phpunit` (using a version compatible with your core) as a `require-dev` dependency ;
+3. Add your `phpunit.xml` file at the root of your project ;
+4. Enable (and configure) PHPUnit in your `grumphp.yml` file.
+
+> [!NOTE]
+> Drupal Coder is included in version 9 to benefit from PHP_CS version 4.
+> 
+> Because Drupal Coder 9 is not compatible with any version of `drupal/core-dev`, it is declared in Composer as version `8.3.31` (retro-compatibility is ensured) so that adding `drupal/core-dev` does not cause conflicts.

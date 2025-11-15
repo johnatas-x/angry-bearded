@@ -7,6 +7,9 @@
   ],
   "assignees": ["johnatas-x"],
   "prHourlyLimit": 3,
+  "ignoreDeps": [
+    "drupal/coder"
+  ],
   "packageRules": [
     {
       "groupName": "GrumPHP",
@@ -20,7 +23,8 @@
       "matchPackageNames": [
         "ekino/phpstan-banned-code",
         "mglaman/phpstan-drupal",
-        "phpstan/**"
+        "phpstan/**",
+        "shipmonk/dead-code-detector"
       ]
     }
   ]
