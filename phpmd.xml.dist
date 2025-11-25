@@ -51,7 +51,6 @@
           \Drupal\Core\Url,
           \Drupal\block\Entity\Block,
           \Drupal\comment\Entity\Comment,
-          \Drupal\config_pages\Entity\ConfigPages,
           \Drupal\field\Entity\FieldConfig,
           \Drupal\field\Entity\FieldStorageConfig,
           \Drupal\file\Entity\File,
