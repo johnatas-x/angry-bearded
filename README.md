@@ -8,6 +8,20 @@ The rules are intentionally strict — feel free to customize the .dist files to
 
 A `.editorconfig` file and a Qodana template are also included.
 
+> [!CAUTION]
+>
+> Since December 3, 2025, the `dev-develop` version of `phpcompatibility` requires at least `squizlabs/php_codesniffer` **4.0.1**.
+> If you are using an older version of this package, you may encounter a Composer conflict.
+>
+> To resolve this, add the following line to the `require-dev` section of your `composer.json`:
+> ```json
+> "phpcompatibility/php-compatibility": "10.0.0-alpha2 as dev-develop"
+> ```
+> Then run:
+> ```bash
+> composer update phpcompatibility/php-compatibility
+> ```
+
 ## 🔧 Included tools
 - ComposerRequireChecker
 - Drupal Coder
