@@ -30,7 +30,7 @@
     "phpmd/phpmd": "3.x-dev",
     "phpro/grumphp": "2.17.0",
     "phpstan/extension-installer": "1.4.3",
-    "phpstan/phpstan": "2.1.32",
+    "phpstan/phpstan": "2.1.33",
     "phpstan/phpstan-deprecation-rules": "2.0.3",
     "povils/phpmnd": "3.6.0",
     "shipmonk/dead-code-detector": "0.14.0",
