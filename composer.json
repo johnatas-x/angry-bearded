@@ -27,7 +27,7 @@
     "mglaman/phpstan-drupal": "2.0.10",
     "php-parallel-lint/php-parallel-lint": "1.4.0",
     "phpcompatibility/php-compatibility": "dev-develop",
-    "phpmd/phpmd": "3.x-dev#07ac9e2be6b434581335397debbddc8821b22f02",
+    "phpmd/phpmd": "3.x-dev#1bc8a751cf5694f10d7aafa17a4308c0f33c558b",
     "phpro/grumphp": "2.18.0",
     "phpstan/extension-installer": "1.4.3",
     "phpstan/phpstan": "2.1.33",
