@@ -36,7 +36,7 @@
     "shipmonk/dead-code-detector": "0.14.1",
     "slevomat/coding-standard": "8.26.0",
     "squizlabs/php_codesniffer": "4.0.1",
-    "vincentlanglet/twig-cs-fixer": "3.12.0"
+    "vincentlanglet/twig-cs-fixer": "3.13.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"
