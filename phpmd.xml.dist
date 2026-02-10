@@ -49,17 +49,6 @@
           \Drupal\Core\Render\Markup,
           \Drupal\Core\Site\Settings,
           \Drupal\Core\Url,
-          \Drupal\block\Entity\Block,
-          \Drupal\comment\Entity\Comment,
-          \Drupal\field\Entity\FieldConfig,
-          \Drupal\field\Entity\FieldStorageConfig,
-          \Drupal\file\Entity\File,
-          \Drupal\media\Entity\Media,
-          \Drupal\node\Entity\Node,
-          \Drupal\node\Entity\NodeType,
-          \Drupal\paragraphs\Entity\Paragraph,
-          \Drupal\path_alias\Entity\PathAlias,
-          \Drupal\user\Entity\User,
           \Drush\Drush
         </value>
       </property>
