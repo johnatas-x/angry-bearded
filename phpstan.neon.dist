@@ -2,21 +2,21 @@ includes:
   - phpstan-drupal.neon
 
 parameters:
-    level: 10
-    reportUnmatchedIgnoredErrors: false
-    treatPhpDocTypesAsCertain: false
-    inferPrivatePropertyTypeFromConstructor: true
-    scanDirectories:
-      - vendor/drush/drush
-    paths:
-      - web/modules/custom
-      - web/profiles/custom
-      - web/themes/custom
-    shipmonkDeadCode:
-      detect:
-        deadMethods: true
-        deadConstants: true
-        deadEnumCases: true
-      usageProviders:
-        phpunit:
-          enabled: false
+  level: 10
+  reportUnmatchedIgnoredErrors: false
+  treatPhpDocTypesAsCertain: false
+  inferPrivatePropertyTypeFromConstructor: true
+  scanDirectories:
+    - vendor/drush/drush
+  paths:
+    - web/modules/custom
+    - web/profiles/custom
+    - web/themes/custom
+  shipmonkDeadCode:
+    detect:
+      deadMethods: true
+      deadConstants: true
+      deadEnumCases: true
+    usageProviders:
+      phpunit:
+        enabled: false

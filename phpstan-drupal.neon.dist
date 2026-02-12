@@ -2,73 +2,56 @@
 # Ignore certain standards for legacy procedural functions in module, theme, and includes.
 # Specifically centered around hook/alters and lack of proper types.
 parameters:
-    ignoreErrors:
-      # Procedural hooks.
-      -
-        message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
-        paths:
-          - *.deploy.php
-          - *.inc
-          - *.install
-          - *.module
-          - *.post_update.php
-          - *.theme
-      -
-        message: '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified in iterable type array\./'
-        paths:
-          - *.deploy.php
-          - *.inc
-          - *.install
-          - *.module
-          - *.post_update.php
-          - *.theme
-      -
-        message: '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
-        paths:
-          - *.deploy.php
-          - *.inc
-          - *.install
-          - *.module
-          - *.post_update.php
-          - *.theme
+  ignoreErrors:
+    # Procedural hooks.
+    -
+      messages:
+        - '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
+        - '/^Function [a-zA-Z0-9\\_]+\(\) return type has no value type specified in iterable type array\./'
+        - '/^Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
+      paths:
+        - *.deploy.php
+        - *.inc
+        - *.install
+        - *.module
+        - *.post_update.php
+        - *.theme
 
-      # Attributes hooks and inherited forms.
-      -
-        message: '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
-        paths:
-          - **/src/Hook/*.php
-          - **/src/Form/*.php
-      -
-        message: '/^Method [a-zA-Z0-9\\_:]+\(\) return type has no value type specified in iterable type array\./'
-        paths:
-          - **/src/Hook/*.php
-          - **/src/Form/*.php
-      -
-        message: '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
-        paths:
-          - **/src/Hook/*.php
-          - **/src/Form/*.php
+    # Attributes hooks and inherited forms.
+    -
+      messages:
+        - '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no type specified\./'
+        - '/^Method [a-zA-Z0-9\\_:]+\(\) return type has no value type specified in iterable type array\./'
+        - '/^Method [a-zA-Z0-9\\_:]+\(\) has parameter \$[a-zA-Z\\_]+ with no value type specified in iterable type array\./'
+      paths:
+        - **/src/Hook/*.php
+        - **/src/Form/*.php
 
-      # new static() is a best practice in Drupal (especially for ContainerInjectionInterface::create methods in a non-final class), so we cannot fix that.
-      - "#^Unsafe usage of new static#"
+    # new static() is a best practice in Drupal (especially for ContainerInjectionInterface::create methods in a non-final class), so we cannot fix that.
+    -
+      rawMessage: 'Unsafe usage of new static().'
 
-      # Ignore common errors for now.
-      - "#Drupal calls should be avoided in classes, use dependency injection instead#"
-      - "#^Plugin definitions cannot be altered.#"
-      - "#^Missing cache backend declaration for performance.#"
-      - "#cache tag might be unclear and does not contain the cache key in it.#"
-      - "#^Class .* extends @internal class#"
-      # Drupal's mixed...
-      - "#^Cannot .* on mixed.#"
+    # Ignore common errors for now.
+    -
+      messages:
+        - '#Drupal calls should be avoided in classes, use dependency injection instead#'
+        - '#^Plugin definitions cannot be altered.#'
+        - '#^Missing cache backend declaration for performance.#'
+        - '#cache tag might be unclear and does not contain the cache key in it.#'
+        - '#^Class .* extends @internal class#'
 
-      # shipmonkDeadCode for Drupal.
-      - '#^Unused .*?::__construct$#'
-      -
-        message: '#^Unused .*::.*$#'
-        paths:
-          - **/src/Hook/*.php
-          - **/src/**/*Interface.php
-      -
-        message: '#^Unused .*?::content$#'
-        paths:
-          - **/src/Controller/*.php
+    # Drupal's mixed...
+    - '#^Cannot .* on mixed.#'
+
+    # shipmonkDeadCode for Drupal.
+    - '#^Unused .*?::__construct$#'
+    -
+      message: '#^Unused .*::.*$#'
+      paths:
+        - **/src/Hook/*.php
+        - **/src/*Interface.php
+        - **/src/**/*Interface.php
+    -
+      message: '#^Unused .*?::content$#'
+      paths:
+        - **/src/Controller/*.php
