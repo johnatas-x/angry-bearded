@@ -17,7 +17,7 @@
   "require": {
     "php": ">=8.4",
     "drupal/coder": "9.0.0-beta1",
-    "ekino/phpstan-banned-code": "3.1.0",
+    "ekino/phpstan-banned-code": "3.2.0",
     "ergebnis/composer-normalize": "2.50.0",
     "friendsoftwig/twigcs": "6.6.1",
     "johnatas-x/grumphp-phpa": "2.19.0",
