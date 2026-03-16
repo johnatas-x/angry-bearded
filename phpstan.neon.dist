@@ -20,3 +20,6 @@ parameters:
     usageProviders:
       phpunit:
         enabled: false
+  strictRules:
+    disallowedEmpty: false
+    strictArrayFilter: false
