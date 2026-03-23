@@ -21,7 +21,7 @@
     "ergebnis/composer-normalize": "2.50.0",
     "friendsoftwig/twigcs": "6.6.1",
     "johnatas-x/grumphp-phpa": "2.19.0",
-    "johnatas-x/grumphp-phpdd": "2.19.0",
+    "johnatas-x/grumphp-phpdd": "2.19.1",
     "johnatas-x/phpcpd": "6.0.5",
     "maglnet/composer-require-checker": "4.20.0",
     "mglaman/phpstan-drupal": "2.0.12",
