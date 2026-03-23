@@ -57,7 +57,7 @@ A `.editorconfig` file and a Qodana template are also included.
 >| **PHP 8.2** 	 | `1.7.*`       	 | NA            	          | NA            	 |
 >| **PHP 8.3** 	 | `2.*`         	 | `2.*`         	          | NA            	 |
 >| **PHP 8.4** 	 | `2.*`         	 | `2.*` or `3.*`         	 | NA           	  |
->| **PHP 8.5** 	 | NA 	            | `3.*` 	                  | `3.*` 	         |
+>| **PHP 8.5** 	 | NA 	            | `3.*` 	                  | `4.*` 	         |
 
 ### ➡️ When using drupal/core-composer-scaffold (recommended)
 
