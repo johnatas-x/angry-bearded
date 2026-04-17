@@ -30,11 +30,11 @@
     "phpmd/phpmd": "2.15.0",
     "phpro/grumphp": "2.19.0",
     "phpstan/extension-installer": "1.4.3",
-    "phpstan/phpstan": "2.1.49",
+    "phpstan/phpstan": "2.1.50",
     "phpstan/phpstan-deprecation-rules": "2.0.4",
     "phpstan/phpstan-strict-rules": "^2.0",
     "povils/phpmnd": "3.6.1",
-    "shipmonk/dead-code-detector": "1.0.0",
+    "shipmonk/dead-code-detector": "1.1.0",
     "slevomat/coding-standard": "8.28.1",
     "squizlabs/php_codesniffer": "4.0.1",
     "vincentlanglet/twig-cs-fixer": "3.14.0"
