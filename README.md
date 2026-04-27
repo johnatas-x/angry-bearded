@@ -194,7 +194,7 @@ However, everything is prepared for easy integration. If you want to add PHPUnit
 1. Create an alias in your `composer.json` from `drupal/coder` 9 to 8, like :
 ```json
 "require-dev": {
-    "drupal/coder": "9.0.0-alpha1 as 8.3.31",
+    "drupal/coder": "9.0.0 as 8.3.31",
 },
 ```
 2. Add `drupal/core-dev` (using the same version as your Drupal core) as a `require-dev` dependency ;
