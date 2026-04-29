@@ -148,7 +148,7 @@ grumphp:
         task: null
     mago:
       formatter: true
-      formatter_options: ['--staged', '--check']
+      formatter_options: ['--check']
       linter: false
       linter_options: ['--staged']
       analyzer: false
