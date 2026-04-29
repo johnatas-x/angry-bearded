@@ -28,6 +28,7 @@ grumphp:
     variables: { }
     paths: [ ]
   extensions:
+    - GrumphpMago\ExtensionLoader
     - GrumphpPhpa\ExtensionLoader
     - GrumphpPhpdd\ExtensionLoader
   testsuites: []
@@ -139,6 +140,21 @@ grumphp:
     jsonlint:
       ignore_patterns: []
       detect_key_conflicts: false
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    mago:
+      formatter: true
+      formatter_options: ['--staged', '--check']
+      linter: false
+      linter_options: ['--staged']
+      analyzer: false
+      analyzer_options: ['--staged']
+      guard: false
+      guard_options: []
       metadata:
         blocking: true
         enabled: true

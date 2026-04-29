@@ -20,6 +20,7 @@
     "ekino/phpstan-banned-code": "3.2.0",
     "ergebnis/composer-normalize": "2.51.0",
     "friendsoftwig/twigcs": "6.6.1",
+    "johnatas-x/grumphp-mago": "2.20.0",
     "johnatas-x/grumphp-phpa": "2.20.0",
     "johnatas-x/grumphp-phpdd": "2.20.0",
     "johnatas-x/phpcpd": "6.0.5",
@@ -68,6 +69,7 @@
           "overwrite": false,
           "path": "grumphp.yml.dist"
         },
+        "[project-root]/mago.toml.dist": "mago.toml.dist",
         "[project-root]/phpcs.xml.dist": "phpcs.xml.dist",
         "[project-root]/phpmd.xml.dist": "phpmd.xml.dist",
         "[project-root]/phpstan-drupal-deprecated.neon.dist": "phpstan-drupal-deprecated.neon.dist",
