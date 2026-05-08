@@ -35,7 +35,7 @@
     "phpstan/phpstan-strict-rules": "^2.0",
     "povils/phpmnd": "3.6.1",
     "shipmonk/dead-code-detector": "1.1.1",
-    "slevomat/coding-standard": "8.28.1",
+    "slevomat/coding-standard": "8.29.0",
     "squizlabs/php_codesniffer": "4.0.1",
     "vincentlanglet/twig-cs-fixer": "3.14.0"
   },
