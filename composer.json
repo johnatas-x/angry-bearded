@@ -1,7 +1,6 @@
 {
   "name": "johnatas-x/angry-bearded",
   "description": "Code quality checking tools for Drupal 10/11 projects.",
-  "license": "proprietary",
   "type": "project",
   "authors": [
     {
