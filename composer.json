@@ -29,7 +29,7 @@
     "phpmd/phpmd": "2.15.0",
     "phpro/grumphp": "2.21.0",
     "phpstan/extension-installer": "1.4.3",
-    "phpstan/phpstan": "2.1.55",
+    "phpstan/phpstan": "2.2.1",
     "phpstan/phpstan-deprecation-rules": "2.0.4",
     "phpstan/phpstan-strict-rules": "^2.0",
     "povils/phpmnd": "3.6.1",
