@@ -1,0 +1,37 @@
+version = "1"
+php-version = "8.4.0"
+
+[source]
+workspace = "."
+paths = [
+  "web/modules/custom",
+  "web/themes/custom"
+]
+includes = ["vendor"]
+excludes = [
+  "**/node_modules/**",
+  "**/tests/**",
+]
+extensions = ["inc", "install", "module", "php", "profile", "theme"]
+
+[source.glob]
+literal-separator = true
+
+[formatter]
+preset = "drupal"
+preserve-breaking-member-access-chain = true
+preserve-breaking-member-access-chain-first-method-on-same-line = true
+preserve-breaking-argument-list = true
+preserve-breaking-array-like = true
+preserve-breaking-parameter-list = true
+preserve-breaking-attribute-list = true
+preserve-breaking-conditional-expression = true
+preserve-breaking-condition-expression = true
+preserve-redundant-logical-binary-expression-parentheses = true
+
+[linter.rules]
+constant-name = { enabled = true, level = "error" }
+interface-name = { enabled = true, psr = true, level = "error" }
+trait-name = { enabled = true, psr = true, level = "error" }
+
+[analyzer]

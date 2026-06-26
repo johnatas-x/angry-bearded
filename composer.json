@@ -15,7 +15,7 @@
   },
   "require": {
     "php": ">=8.4",
-    "drupal/coder": "9.0.0",
+    "drupal/coder": "9.0.1",
     "ekino/phpstan-banned-code": "3.2.0",
     "ergebnis/composer-normalize": "2.52.0",
     "friendsoftwig/twigcs": "6.6.1",
@@ -67,6 +67,7 @@
           "overwrite": false,
           "path": "grumphp.yml.dist"
         },
+        "[project-root]/mago.toml.dist": "mago.toml.dist",
         "[project-root]/phpcs.xml.dist": "phpcs.xml.dist",
         "[project-root]/phpmd.xml.dist": "phpmd.xml.dist",
         "[project-root]/phpstan-drupal-deprecated.neon.dist": "phpstan-drupal-deprecated.neon.dist",

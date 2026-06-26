@@ -43,6 +43,7 @@ A `.editorconfig` file and a Qodana template are also included.
 - Twigcs
   - Twig CS Fixer
 - composer-normalize
+- Mago
 
 ## 🚀 Installation
 
@@ -57,7 +58,7 @@ A `.editorconfig` file and a Qodana template are also included.
 >| **PHP 8.2** 	 | `1.7.*`       	 | NA            	          | NA            	 |
 >| **PHP 8.3** 	 | `2.*`         	 | `2.*`         	          | NA            	 |
 >| **PHP 8.4** 	 | `2.*`         	 | `2.*` or `3.*`         	 | NA           	  |
->| **PHP 8.5** 	 | NA 	            | `3.*` 	                  | `4.*` 	         |
+>| **PHP 8.5** 	 | NA 	            | TBD 	                    | `4.*` 	         |
 
 ### ➡️ When using drupal/core-composer-scaffold (recommended)
 
@@ -120,6 +121,7 @@ Then, copy all `*.dist` files from the package to your project root. The files c
 
 * .editorconfig.dist
 * grumphp.yml.dist
+* mago.toml.dist
 * phpcs.xml.dist
 * phpmd.xml.dist
 * phpstan.neon.dist
@@ -194,7 +196,7 @@ However, everything is prepared for easy integration. If you want to add PHPUnit
 1. Create an alias in your `composer.json` from `drupal/coder` 9 to 8, like :
 ```json
 "require-dev": {
-    "drupal/coder": "9.0.0 as 8.3.31",
+    "drupal/coder": "9.0.1 as 8.3.31",
 },
 ```
 2. Add `drupal/core-dev` (using the same version as your Drupal core) as a `require-dev` dependency ;

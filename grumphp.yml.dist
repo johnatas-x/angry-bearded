@@ -145,6 +145,54 @@ grumphp:
         label: null
         priority: 0
         task: null
+    mago_analyze:
+      no-stubs: ~
+      retain-codes: [ ]
+      ignore-baseline: ~
+      sort: ~
+      fix-mode: safe
+      minimum-report-level: ~
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    mago_format:
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    mago_guard:
+      mode: ~
+      no-stubs: ~
+      retain-codes: [ ]
+      ignore-baseline: ~
+      sort: ~
+      minimum-report-level: ~
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
+    mago_lint:
+      semantics: ~
+      pedantic: ~
+      only: [ ]
+      retain-codes: [ ]
+      ignore-baseline: ~
+      sort: ~
+      fix-mode: safe
+      minimum-report-level: ~
+      metadata:
+        blocking: true
+        enabled: true
+        label: null
+        priority: 0
+        task: null
     phpa:
       path: web
       exclude:
