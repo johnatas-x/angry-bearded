@@ -56,6 +56,7 @@
   </rule>
 
   <rule ref="rulesets/controversial.xml">
+    <exclude name="CamelCaseNamespace"/>
     <exclude name="CamelCaseParameterName"/>
     <exclude name="CamelCaseVariableName"/>
   </rule>
