@@ -334,7 +334,7 @@ grumphp:
         enabled: true
         label: null
         priority: 0
-        task: null
+        task: phpmd3
     phpmnd:
       directory: web
       whitelist_patterns: [ ]
