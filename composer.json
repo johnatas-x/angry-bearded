@@ -15,6 +15,7 @@
   },
   "require": {
     "php": ">=8.4",
+    "carthage-software/mago": "1.42.0",
     "drupal/coder": "9.0.1",
     "ekino/phpstan-banned-code": "3.2.0",
     "ergebnis/composer-normalize": "2.52.0",
