@@ -30,6 +30,7 @@ grumphp:
   extensions:
     - GrumphpPhpa\ExtensionLoader
     - GrumphpPhpdd\ExtensionLoader
+    - GrumphpPhpMd3\ExtensionLoader
   testsuites: []
   tasks:
     composer:
