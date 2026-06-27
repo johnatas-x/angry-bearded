@@ -146,15 +146,15 @@ grumphp:
         priority: 0
         task: null
     mago_analyze:
-      no-stubs: ~
+      no-stubs: false
       retain-codes: [ ]
       ignore-baseline: ~
-      sort: ~
+      sort: false
       fix-mode: safe
       minimum-report-level: ~
       metadata:
         blocking: true
-        enabled: true
+        enabled: false
         label: null
         priority: 0
         task: null
@@ -174,21 +174,21 @@ grumphp:
       minimum-report-level: ~
       metadata:
         blocking: true
-        enabled: true
+        enabled: false
         label: null
         priority: 0
         task: null
     mago_lint:
-      semantics: ~
-      pedantic: ~
+      semantics: false
+      pedantic: false
       only: [ ]
       retain-codes: [ ]
       ignore-baseline: ~
-      sort: ~
+      sort: false
       fix-mode: safe
       minimum-report-level: ~
       metadata:
-        blocking: true
+        blocking: false
         enabled: true
         label: null
         priority: 0
