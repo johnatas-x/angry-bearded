@@ -30,7 +30,7 @@
     "phpcompatibility/php-compatibility": "dev-develop",
     "phpro/grumphp": "2.22.0",
     "phpstan/extension-installer": "1.4.3",
-    "phpstan/phpstan": "2.2.3",
+    "phpstan/phpstan": "2.2.4",
     "phpstan/phpstan-deprecation-rules": "2.0.4",
     "phpstan/phpstan-strict-rules": "^2.0",
     "povils/phpmnd": "3.6.1",
