@@ -18,7 +18,7 @@
     "carthage-software/mago": "1.59.0",
     "drupal/coder": "9.0.1",
     "ekino/phpstan-banned-code": "3.2.0",
-    "ergebnis/composer-normalize": "2.54.0",
+    "ergebnis/composer-normalize": "2.56.0",
     "friendsoftwig/twigcs": "6.6.1",
     "johnatas-x/grumphp-phpa": "2.26.0",
     "johnatas-x/grumphp-phpdd": "2.26.1",
